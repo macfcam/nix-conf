@@ -3,6 +3,7 @@
 let
   pname = "lens-desktop";
   version = "2025.9.151055";
+  proxy = "socks5h://192.168.122.100:1080";
 
   src = pkgs.fetchurl {
     url = "https://api.k8slens.dev/binaries/Lens-${version}-latest.x86_64.AppImage";
@@ -36,7 +37,7 @@ pkgs.appimageTools.wrapType2 {
       $out/share/icons/hicolor/512x512/apps/${pname}.png
 
     substituteInPlace $out/share/applications/${pname}.desktop \
-      --replace 'Exec=AppRun' 'Exec=${pname}'
+      --replace 'Exec=AppRun' "Exec=env http_proxy=${proxy} https_proxy=${proxy} ${pname}"
   '';
 
   extraPkgs = pkgs: [ pkgs.nss_latest ];
