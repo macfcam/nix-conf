@@ -36,9 +36,15 @@
   # Using Zen kernel
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  # Allow insecure and unfree broadcom-sta package
+  # broadcom-sta package is actually insecure
   nixpkgs.config.allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
+
+  # Allow specific unfree packages
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
+    "broadcom-sta"
+    "spotify" 
+    "terraform" 
+  ];
   
   # Define your hostname.
   networking.hostName = "starscream"; 
