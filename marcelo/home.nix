@@ -23,6 +23,7 @@ in
     ./modules/neovim.nix
     ./modules/packages.nix
     ./modules/proxychains.nix
+    ./modules/ssh.nix
     ./modules/vscodium.nix
   ];
 
