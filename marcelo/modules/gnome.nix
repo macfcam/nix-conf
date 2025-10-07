@@ -4,7 +4,9 @@
   home.packages = with pkgs; [
     adw-gtk3
     gnomeExtensions.appindicator
+    gnomeExtensions.astra-monitor
     gnomeExtensions.bluetooth-battery-meter
+    gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.dash-to-dock
     gnome-tweaks
@@ -20,8 +22,10 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "Bluetooth-Battery-Meter@maniacx.github.com"
+        "blur-my-shell@aunetx"
         "clipboard-indicator@tudmotu.com"
         "dash-to-dock@micxgx.gmail.com"
+        "monitor@astraext.github.io"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
     };
