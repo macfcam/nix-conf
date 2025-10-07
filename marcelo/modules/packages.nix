@@ -17,6 +17,7 @@
     kubectx
     mcfly
     neofetch
+    oci-cli
     pciutils
     pyenv
     resources
