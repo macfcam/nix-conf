@@ -6,6 +6,7 @@
     arch-install-scripts
     aria2
     azure-cli
+    chromium
     cdrtools
     docker-compose
     eza
