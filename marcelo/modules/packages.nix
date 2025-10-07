@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    ansible
     arch-install-scripts
     aria2
     azure-cli
