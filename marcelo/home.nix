@@ -18,9 +18,11 @@ in
 
   imports = [
     ./modules/fish.nix
+    ./modules/fonts.nix
     ./modules/gnome.nix
     ./modules/neovim.nix
     ./modules/packages.nix
+    ./modules/proxychains.nix
     ./modules/vscodium.nix
   ];
 
