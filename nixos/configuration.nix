@@ -8,9 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
-      # Work In Progress
-      # ./netskope.nix
     ];
 
   # Enable flakes
