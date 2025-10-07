@@ -30,6 +30,9 @@
       "gcm" = "git commit";
       "gps" = "git push";
       "reload_kitty" = "kill -SIGUSR1 $KITTY_PID";
+
+      # proxy aliases
+      "kubeproxy" = "http_proxy=socks5h://192.168.122.100:1080 https_proxy=socks5h://192.168.122.100:1080";
     };
 
     functions = {

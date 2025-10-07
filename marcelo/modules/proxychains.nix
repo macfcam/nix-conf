@@ -19,7 +19,6 @@
 
     # Proxy list format: type host port [user pass]
     [ProxyList]
-    http  192.168.122.100 1080
     socks5  192.168.122.100 1080
   '';
 
