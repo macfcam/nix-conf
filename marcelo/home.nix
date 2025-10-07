@@ -1,5 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
+let
+  # Import Lens package from flake root (pkgs/lens.nix)
+  lens = import (inputs.self + "/pkgs/lens.nix") { inherit pkgs; };
+in
 {
   home.username = "marcelo";
   home.homeDirectory = "/home/marcelo";
@@ -12,7 +16,6 @@
     MOZ_ENABLE_WAYLAND = "1";
   };
 
-  # Imports (split config here)
   imports = [
     ./modules/fish.nix
     ./modules/gnome.nix
@@ -21,6 +24,9 @@
     ./modules/vscodium.nix
   ];
 
-  # Let Home Manager install and manage itself
+  home.packages = [
+    lens
+  ];
+
   programs.home-manager.enable = true;
 }
