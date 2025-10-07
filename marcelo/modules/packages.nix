@@ -5,6 +5,7 @@
     arch-install-scripts
     aria2
     azure-cli
+    cdrtools
     docker-compose
     eza
     git

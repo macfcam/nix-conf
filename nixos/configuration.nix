@@ -148,7 +148,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-      pkgs.power-profiles-daemon
+      dnsmasq
+      power-profiles-daemon
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
