@@ -24,6 +24,7 @@
     pyenv
     resources
     spotify
+    teams-for-linux
     tela-icon-theme
     telegram-desktop
     terraform
