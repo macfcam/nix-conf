@@ -12,9 +12,11 @@
     eza
     git
     htop
+    jq
     kitty
     kubectl
     kubectx
+    kubernetes-helm
     mcfly
     neofetch
     oci-cli
