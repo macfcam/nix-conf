@@ -23,8 +23,23 @@
   # Load kernel modules on boot.
   boot.initrd.kernelModules = [ "amdgpu" "wl" ];
 
-  # Necessary for Broadcom BCM4360 Wireless card
-  boot.blacklistedKernelModules = [ "b43" "b43legacy" "bcm43xx" "bcm43xx" "tg3"  "ssb" "brcmfmac" "brcmsmac" "bcma" ];
+  # Blacklist kernel modules at boot
+  boot.blacklistedKernelModules = [
+    # Necessary for Broadcom BCM4360 Wireless card
+    "b43"
+    "b43legacy"
+    "bcm43xx"
+    "bcm43xx"
+    "tg3"
+    "ssb"
+    "brcmfmac"
+    "brcmsmac"
+    "bcma"
+
+    "asus_wmi"
+    "eeepc_wmi"
+  ];
+
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   # Enable AMD microcode updates
