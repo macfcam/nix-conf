@@ -26,6 +26,22 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/mnt/myexternaldisk" =
+    { device = "/dev/disk/by-uuid/2ADB59CE560FF235";
+      fsType = "ntfs";
+      options = [ 
+        "rw"
+        "nosuid"
+        "nodev"
+        "relatime"
+        "user_id=0"
+        "group_id=0"
+        "allow_other"
+        "blksize=4096"
+        "x-gvfs-show"
+      ];
+    };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
