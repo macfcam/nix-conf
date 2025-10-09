@@ -14,11 +14,11 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/bed459a8-9cf9-4d57-a201-73139a427094";
+    { device = "/dev/disk/by-uuid/454f9dc0-3f81-439b-8d26-8bcbc6e4b396";
       fsType = "xfs";
     };
 
-  boot.initrd.luks.devices."luks-71194e75-bc13-473d-a582-52b17f47acb5".device = "/dev/disk/by-uuid/71194e75-bc13-473d-a582-52b17f47acb5";
+  boot.initrd.luks.devices."nixos-rootfs".device = "/dev/disk/by-uuid/6fa9ae8d-6cc2-4a71-b1d3-83e3eb4a62d7";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/5592-C106";
