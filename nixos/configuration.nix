@@ -13,59 +13,75 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Run unpatched dynamic binaries
-  programs.nix-ld.enable = true;
+  # Boot related settings
+  boot = {
+    kernelParams = [ "quiet" ];
+    # Using Zen kernel
+    kernelPackages = pkgs.linuxPackages_zen;    
+    loader = {
+      # Use systemd-boot EFI boot loader
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    # Load kernel modules on boot.
+    initrd.kernelModules = [
+      "amdgpu"
+      "wl"
+    ];
+    # Blacklist kernel modules at boot
+    blacklistedKernelModules = [
+      # Necessary for Broadcom BCM4360 Wireless card
+      "b43"
+      "b43legacy"
+      "bcm43xx"
+      "bcm43xx"
+      "tg3"
+      "ssb"
+      "brcmfmac"
+      "brcmsmac"
+      "bcma"
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+      "asus_wmi"
+      "eeepc_wmi"  
+    ];
+    # Extra modules for Broadcom BCM4360 Wireless card
+    extraModulePackages = [
+      config.boot.kernelPackages.broadcom_sta
+    ];
+  };
 
-  # Load kernel modules on boot.
-  boot.initrd.kernelModules = [ "amdgpu" "wl" ];
+  # Hardware related settings
+  hardware = {
+    cpu.amd.updateMicrocode = true;       # Enable AMD microcode updates
 
-  # Blacklist kernel modules at boot
-  boot.blacklistedKernelModules = [
-    # Necessary for Broadcom BCM4360 Wireless card
-    "b43"
-    "b43legacy"
-    "bcm43xx"
-    "bcm43xx"
-    "tg3"
-    "ssb"
-    "brcmfmac"
-    "brcmsmac"
-    "bcma"
+    bluetooth.enable = true;              # enables support for Bluetooth
+    bluetooth.powerOnBoot = true;         # powers up the default Bluetooth controller on boot
 
-    "asus_wmi"
-    "eeepc_wmi"
-  ];
+    graphics.enable = true;
+    graphics.extraPackages = with pkgs; [ mesa libglvnd ];
+  };
 
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+  # Nixpkgs related settings
+  nixpkgs = {
+    config = {
+      allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
+        "broadcom-sta"
+        "spotify" 
+        "terraform"
+      ];
+    };
+  };
 
-  # Enable AMD microcode updates
-  hardware.cpu.amd.updateMicrocode = true;
-
-  # Kernel parameters
-  boot.kernelParams = [ "quiet" ];
-
-  # Using Zen kernel
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
-  # broadcom-sta package is actually insecure
-  nixpkgs.config.allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
-
-  # Allow specific unfree packages
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
-    "broadcom-sta"
-    "spotify" 
-    "terraform" 
-  ];
-  
-  # Define your hostname.
-  networking.hostName = "starscream";
-
-  # Add additional entries on hosts file
-  networking.extraHosts = ''
+  # Network related settings
+  networking = {
+    # Define hostname
+    hostName = "starscream";
+    networkmanager = {
+      # Enable NetworkManager
+      enable = true;
+    };
+    extraHosts = ''
 # AKS private clusters
 10.33.0.10            rnn-new-omni-kubernetes-dev-v8z8h6o4.privatelink.eastus.azmk8s.io
 10.34.0.10            rnn-sup-kubernetes-nonprod-fesad9t9.privatelink.eastus.azmk8s.io
@@ -83,47 +99,48 @@
 10.34.0.121           elasticsearch-azure-nonprod.lojasrenner.io
 10.34.128.121         elasticsearch-azure-prod.lojasrenner.io
 10.34.128.121         sonarqube-azure-prod.lojasrenner.io
-  '';
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-
-  # Enable bluetooth
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-
-  # Enable power-profiles-daemon service
-  services.power-profiles-daemon.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Sao_Paulo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = false;
-
-  # Install GNOME and exclude unnecessary packages
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm = {
-    enable = true;
-    autoSuspend = false;
+    '';
   };
   
+  # System services related settings
+  services = {
+    # Enable OpenSSH daemon
+    openssh.enable = true;
+
+    # Enable power-profiles-daemon service
+    power-profiles-daemon.enable = true;
+
+    # Disable X11
+    xserver.enable = false;
+
+    # Install GNOME
+    desktopManager.gnome.enable = true;
+    displayManager.gdm = {
+      enable = true;
+      autoSuspend = false;
+    };
+
+    # Disable CUPS
+    printing.enable = false;
+
+    # Enable sound with pipewire.
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+
+      # use the example session manager (no others are packaged yet so this is enabled by default,
+      # no need to redefine it in your config for now)
+      #media-session.enable = true;
+    };
+  };
+
+  # Exclude unnecessary GNOME packages
   environment.gnome.excludePackages = with pkgs; [ 
     decibels
     epiphany
@@ -142,53 +159,68 @@
     yelp
   ];
 
+  # Set your time zone.
+  time.timeZone = "America/Sao_Paulo";
+
+  # Locale related settings
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
+  };
+
   # Configure console keymap
   console.keyMap = "us";
-
-  # Disable CUPS.
-  services.printing.enable = false;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.marcelo = {
     isNormalUser = true;
     description = "Marcelo Alves";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" "video" "input" ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # Install some packages
+  programs = {
+    firefox.enable = true;
+    virt-manager.enable = true;
 
-  # Setup Docker and Libvirt.
+    # Run unpatched dynamic binaries
+    nix-ld.enable = true;
+  };
+
+  # Setup Docker and QEMU/Libvirt virtualization.
   virtualisation = {
     docker = { 
       enable = true;
     };
     libvirtd = {
       enable = true;
+      qemu = {
+        package = (pkgs.qemu_full.override {
+          enableDocs = false;
+          cephSupport = false;
+        });
+      };
     };
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-      dnsmasq
-      power-profiles-daemon
+  environment.systemPackages = with pkgs; [    
+    dnsmasq
+    power-profiles-daemon
+    spice-gtk
+    spice-protocol
+    virglrenderer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -200,9 +232,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
