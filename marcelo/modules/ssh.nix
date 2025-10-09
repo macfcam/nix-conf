@@ -28,6 +28,7 @@
         user = "git";
         hostname = "gitlab-corp-hml.lojasrenner.io";
         identityFile = "~/.ssh/id_ed25519_marcelo_filho";
+        proxyCommand = "nc -X 5 -x 192.168.122.100:1080 %h %p";
         extraOptions = {
           PreferredAuthentications = "publickey";
         };
@@ -36,6 +37,7 @@
         user = "git";
         hostname = "gitlab-corp.lojasrenner.io";
         identityFile = "~/.ssh/id_ed25519_marcelo_filho";
+        proxyCommand = "nc -X 5 -x 192.168.122.100:1080 %h %p";
         extraOptions = {
           PreferredAuthentications = "publickey";
         };
@@ -44,6 +46,7 @@
         user = "git";
         hostname = "gitlab.lojasrenner.com.br";
         identityFile = "~/.ssh/id_ed25519_marcelo_filho";
+        proxyCommand = "nc -X 5 -x 192.168.122.100:1080 %h %p";
         extraOptions = {
           PreferredAuthentications = "publickey";
         };
