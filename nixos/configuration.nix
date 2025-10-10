@@ -185,7 +185,7 @@
   users.users.marcelo = {
     isNormalUser = true;
     description = "Marcelo Alves";
-    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" "video" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" "video" "input" "render" ];
   };
 
   # Install some packages

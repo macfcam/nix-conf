@@ -1,6 +1,11 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 
-{
+let
+  # Import stable packages
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.system;
+  };
+in {
   home.packages = with pkgs; [
     ansible
     arch-install-scripts
@@ -24,7 +29,6 @@
     pyenv
     resources
     spotify
-    teams-for-linux
     tela-icon-theme
     telegram-desktop
     terraform
@@ -32,5 +36,8 @@
     virt-manager
     wget
     wl-clipboard
+  ] ++ [
+    # ✅ Pull this one from nixos-25.05 stable
+    pkgsStable.teams-for-linux
   ];
 }
