@@ -18,6 +18,7 @@ in {
     git
     htop
     jq
+    kind
     kitty
     kubectl
     kubectx
