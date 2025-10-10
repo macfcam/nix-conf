@@ -22,6 +22,7 @@ in {
     kubectl
     kubectx
     kubernetes-helm
+    libxslt
     mcfly
     neofetch
     oci-cli
