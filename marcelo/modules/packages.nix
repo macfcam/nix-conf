@@ -39,7 +39,6 @@ in {
     wget
     wl-clipboard
   ] ++ [
-    # ✅ Pull this one from nixos-25.05 stable
     pkgsStable.teams-for-linux
   ];
 }

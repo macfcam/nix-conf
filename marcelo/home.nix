@@ -20,6 +20,7 @@ in
     ./modules/fish.nix
     ./modules/fonts.nix
     ./modules/gnome.nix
+    ./modules/kitty.nix
     ./modules/neovim.nix
     ./modules/packages.nix
     ./modules/proxychains.nix
