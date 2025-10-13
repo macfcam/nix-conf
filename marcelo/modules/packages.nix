@@ -5,6 +5,23 @@ let
   pkgsStable = import inputs.nixpkgs-stable {
     system = pkgs.system;
   };
+
+  teams-for-linux-2_2_1 = pkgsStable.teams-for-linux.override {
+    buildNpmPackage = args: pkgsStable.buildNpmPackage (args // rec {
+      pname = "teams-for-linux";
+      version = "2.2.1";
+
+      src = pkgs.fetchFromGitHub {
+        owner = "IsmaelMartinez";
+        repo = "teams-for-linux";
+        tag = "v${version}";
+        hash = "sha256-iyfBmJ+AFAeM+1x8n8/lnmpoWTwP58f+WVDUfLbvHbE=";
+      };
+
+      npmDepsHash = "sha256-XZ/TLGMfF0r+NkjdLrJzeCdlX9glJAE19q8O2zXJuZQ=";
+    });
+  };
+
 in {
   home.packages = with pkgs; [
     ansible
@@ -39,6 +56,6 @@ in {
     wget
     wl-clipboard
   ] ++ [
-    pkgsStable.teams-for-linux
+    teams-for-linux-2_2_1
   ];
 }
