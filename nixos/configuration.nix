@@ -54,11 +54,15 @@
   hardware = {
     cpu.amd.updateMicrocode = true;       # Enable AMD microcode updates
 
-    bluetooth.enable = true;              # enables support for Bluetooth
-    bluetooth.powerOnBoot = true;         # powers up the default Bluetooth controller on boot
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
 
-    graphics.enable = true;
-    graphics.extraPackages = with pkgs; [ mesa libglvnd ];
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [ mesa libglvnd ];
+    };
   };
 
   # Nixpkgs related settings
