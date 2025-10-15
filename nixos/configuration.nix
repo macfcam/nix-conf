@@ -17,7 +17,7 @@
   boot = {
     kernelParams = [ "quiet" ];
     # Using Zen kernel
-    kernelPackages = pkgs.linuxPackages_zen;    
+    kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       # Use systemd-boot EFI boot loader
       systemd-boot.enable = true;
@@ -48,6 +48,7 @@
     extraModulePackages = [
       config.boot.kernelPackages.broadcom_sta
     ];
+    tmp.useTmpfs = true;
   };
 
   # Hardware related settings
