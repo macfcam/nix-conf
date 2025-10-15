@@ -26,27 +26,11 @@
     # Load kernel modules on boot.
     initrd.kernelModules = [
       "amdgpu"
-      "wl"
     ];
     # Blacklist kernel modules at boot
     blacklistedKernelModules = [
-      # Necessary for Broadcom BCM4360 Wireless card
-      "b43"
-      "b43legacy"
-      "bcm43xx"
-      "bcm43xx"
-      "tg3"
-      "ssb"
-      "brcmfmac"
-      "brcmsmac"
-      "bcma"
-
       "asus_wmi"
-      "eeepc_wmi"  
-    ];
-    # Extra modules for Broadcom BCM4360 Wireless card
-    extraModulePackages = [
-      config.boot.kernelPackages.broadcom_sta
+      "eeepc_wmi"
     ];
     tmp.useTmpfs = true;
   };
@@ -69,10 +53,8 @@
   # Nixpkgs related settings
   nixpkgs = {
     config = {
-      allowInsecurePredicate = pkg: builtins.elem (lib.getName pkg) [ "broadcom-sta" ];
       allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
-        "broadcom-sta"
-        "spotify" 
+        "spotify"
         "terraform"
       ];
     };
