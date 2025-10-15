@@ -9,7 +9,7 @@
         userKnownHostsFile = "~/.ssh/known_hosts";
         identitiesOnly = true;
       };
-      "10.208.*.* 10.206.*.* 172.25.*.* 10.34.*.*" = {
+      "10.208.*.* 10.206.*.* 172.25.*.* 10.34.*.* 10.100.*.*" = {
         proxyCommand = "nc -X 5 -x 192.168.122.100:1080 %h %p";
       };
       "openwrt-r4s" = {
