@@ -67,6 +67,12 @@
         identityFile = "~/.ssh/oci_rsa_resource";
         proxyCommand = "nc -X 5 -x 192.168.122.100:1080 %h %p";
       };
+      "rnn-sup-sre-automations-prod" = {
+        user = "sre_automations";
+        hostname = "10.34.129.30";
+        identityFile = "~/.ssh/id_rsa_sis_sre_automations";
+        proxyCommand = "nc -X 5 -x 192.168.122.100:1080 %h %p";
+      };
     };
   };
 }
