@@ -46,6 +46,7 @@ in {
     oci-cli
     pciutils
     pyenv
+    quickemu
     resources
     spotify
     tela-icon-theme
