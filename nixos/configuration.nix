@@ -16,7 +16,7 @@
   # Boot related settings
   boot = {
     kernelParams = [ "quiet" ];
-    # Using Zen kernel
+    # Using linux-zen kernel
     kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       # Use systemd-boot EFI boot loader
@@ -37,6 +37,7 @@
 
   # Hardware related settings
   hardware = {
+    enableAllFirmware = true;
     cpu.amd.updateMicrocode = true;       # Enable AMD microcode updates
 
     bluetooth = {
@@ -53,10 +54,7 @@
   # Nixpkgs related settings
   nixpkgs = {
     config = {
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ 
-        "spotify"
-        "terraform"
-      ];
+      allowUnfree = true;
     };
   };
 
