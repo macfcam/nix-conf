@@ -18,7 +18,6 @@ in
 
   imports = [
     ./modules/fish.nix
-    ./modules/fonts.nix
     ./modules/gnome.nix
     ./modules/kitty.nix
     ./modules/neovim.nix

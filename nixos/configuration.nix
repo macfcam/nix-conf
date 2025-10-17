@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Font config
+      ./modules/fonts.nix
     ];
 
   # Enable flakes

@@ -62,10 +62,13 @@
     
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      font-hinting = "full";
+      document-font-name = "Noto Sans 10";
       font-antialiasing = "rgba";
+      font-hinting = "full";
+      font-name = "Noto Sans 10";
       gtk-theme = "adw-gtk3-dark";
       icon-theme = "Tela-dark";
+      monospace-font-name = "Noto Sans Mono 10";
     };
     
     "org/gnome/desktop/input-sources" = {
