@@ -9,6 +9,7 @@ in
   # Install fonts system-wide
   fonts.packages = with pkgs; with nf; [
     dejavu_fonts
+    ibm-plex
     liberation_ttf
     noto-fonts
     noto-fonts-cjk-sans
@@ -27,9 +28,9 @@ in
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif" "DejaVu Serif" ];
-        sansSerif = [ "Noto Sans" "DejaVu Sans" ];
-        monospace = [ "Noto Sans Mono" "DejaVu Sans Mono" ];
+        serif = [ "IBM Plex Serif" ];
+        sansSerif = [ "IBM Plex Sans" ];
+        monospace = [ "IBM Plex Mono" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

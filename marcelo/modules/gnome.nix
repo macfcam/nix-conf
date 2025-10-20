@@ -119,13 +119,13 @@
     
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      document-font-name = "Noto Sans 10";
+      document-font-name = "IBM Plex Sans 10";
       font-antialiasing = "rgba";
       font-hinting = "full";
-      font-name = "Noto Sans 10";
+      font-name = "IBM Plex Sans 10";
       gtk-theme = "adw-gtk3-dark";
       icon-theme = "Tela-dark";
-      monospace-font-name = "Noto Sans Mono 10";
+      monospace-font-name = "IBM Plex Mono 10";
     };
     
     "org/gnome/desktop/input-sources" = {
