@@ -49,7 +49,6 @@ in {
     quickemu
     resources
     spotify
-    tela-icon-theme
     telegram-desktop
     terraform
     terragrunt
