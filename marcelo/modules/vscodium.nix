@@ -8,6 +8,7 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
         eamodio.gitlens
         hashicorp.terraform
         jnoortheen.nix-ide
