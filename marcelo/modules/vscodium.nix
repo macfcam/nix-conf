@@ -26,9 +26,9 @@
         }
       ];
       userSettings = {
-        "editor.fontFamily" = "CommitMono Nerd Font Mono";
-        "debug.console.fontFamily" = "CommitMono Nerd Font Mono";
-        "terminal.integrated.fontFamily" = "CommitMono Nerd Font Mono";
+        "editor.fontFamily" = "CodeNewRoman Nerd Font Mono";
+        "debug.console.fontFamily" = "CodeNewRoman Nerd Font Mono";
+        "terminal.integrated.fontFamily" = "CodeNewRoman Nerd Font Mono";
 
         "window.autoDetectColorScheme" = true;
         "workbench.preferredLightColorTheme" = "Catppuccin Latte";
@@ -52,9 +52,9 @@
         "git.autofetch" = true;
         "explorer.confirmDragAndDrop" = false;
 
-        "debug.console.fontSize" = 12;
-        "editor.fontSize" = 12;
-        "terminal.integrated.fontSize" = 12;
+        "debug.console.fontSize" = 14;
+        "editor.fontSize" = 14;
+        "terminal.integrated.fontSize" = 14;
 
         "editor.largeFileOptimizations" = false;
         "workbench.iconTheme" = "catppuccin-mocha";
