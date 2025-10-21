@@ -6,19 +6,19 @@ let
     system = pkgs.system;
   };
 
-  teams-for-linux-2_2_1 = pkgsStable.teams-for-linux.override {
+  teams-for-linux-2_6_0 = pkgsStable.teams-for-linux.override {
     buildNpmPackage = args: pkgsStable.buildNpmPackage (args // rec {
       pname = "teams-for-linux";
-      version = "2.2.1";
+      version = "2.6.0";
 
       src = pkgs.fetchFromGitHub {
         owner = "IsmaelMartinez";
         repo = "teams-for-linux";
         tag = "v${version}";
-        hash = "sha256-iyfBmJ+AFAeM+1x8n8/lnmpoWTwP58f+WVDUfLbvHbE=";
+        hash = "sha256-J7BrJelckGQxbQ1o4WrF9Kdv9nr+N8LWlv4FvDsEu5E=";
       };
 
-      npmDepsHash = "sha256-XZ/TLGMfF0r+NkjdLrJzeCdlX9glJAE19q8O2zXJuZQ=";
+      npmDepsHash = "sha256-WdQbUkOXPOAgk8rr88NpCdX+2z6l0wJRqIK+O8IkqYE=";
     });
   };
 
@@ -56,6 +56,6 @@ in {
     wget
     wl-clipboard
   ] ++ [
-    teams-for-linux-2_2_1
+    teams-for-linux-2_6_0
   ];
 }
