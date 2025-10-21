@@ -52,6 +52,7 @@ in {
     telegram-desktop
     terraform
     terragrunt
+    velero
     virt-manager
     wget
     wl-clipboard
