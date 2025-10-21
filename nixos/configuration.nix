@@ -86,7 +86,8 @@
 10.34.0.121           percona-pmm-azure-nonprod.lojasrenner.io
 10.34.0.121           elasticsearch-azure-nonprod.lojasrenner.io
 10.34.128.121         elasticsearch-azure-prod.lojasrenner.io
-10.34.128.121         sonarqube-azure-prod.lojasrenner.io
+10.34.128.121         sonarqube-omni.lojasrenner.io
+10.34.128.121         rancher-azure-prod.lojasrenner.io
     '';
   };
   
