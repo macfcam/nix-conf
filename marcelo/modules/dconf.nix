@@ -34,7 +34,7 @@ with lib.hm.gvariant;
       background-color = "#1e1e2e";
       backspace-binding = "ascii-delete";
       bold-color-same-as-fg = true;
-      cursor-blink-mode = "disabled";
+      cursor-blink-mode = "off";
       cursor-colors-set = false;
       cursor-shape = "block";
       custom-command = "fish";
