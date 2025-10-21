@@ -41,7 +41,7 @@ with lib.hm.gvariant;
       default-size-columns = 130;
       default-size-rows = 40;
       delete-binding = "delete-sequence";
-      font = "CodeNewRoman Nerd Font Mono 11";
+      font = "FantasqueSansM Nerd Font Mono 11";
       foreground-color = "#cdd6f4";
       highlight-colors-set = false;
       login-shell = false;
@@ -75,13 +75,13 @@ with lib.hm.gvariant;
     
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      document-font-name = "IBM Plex Sans 10";
+      document-font-name = "Sans 10";
       font-antialiasing = "rgba";
       font-hinting = "full";
-      font-name = "IBM Plex Sans 10";
+      font-name = "Adwaita Sans 10";
       gtk-theme = "adw-gtk3-dark";
       icon-theme = "Tela-dark";
-      monospace-font-name = "IBM Plex Mono 10";
+      monospace-font-name = "Adwaita Mono 10";
     };
     
     "org/gnome/desktop/input-sources" = {

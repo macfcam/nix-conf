@@ -26,9 +26,9 @@
         }
       ];
       userSettings = {
-        "editor.fontFamily" = "CodeNewRoman Nerd Font Mono";
-        "debug.console.fontFamily" = "CodeNewRoman Nerd Font Mono";
-        "terminal.integrated.fontFamily" = "CodeNewRoman Nerd Font Mono";
+        "editor.fontFamily" = "FantasqueSansM Nerd Font Mono";
+        "debug.console.fontFamily" = "FantasqueSansM Nerd Font Mono";
+        "terminal.integrated.fontFamily" = "FantasqueSansM Nerd Font Mono";
 
         "window.autoDetectColorScheme" = true;
         "workbench.preferredLightColorTheme" = "Catppuccin Latte";
