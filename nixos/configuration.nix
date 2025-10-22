@@ -14,6 +14,9 @@
 
       # Network config
       ./modules/networking.nix
+
+      # Virtualization config
+      ./modules/virtualisation.nix
     ];
 
   # Enable flakes
@@ -157,31 +160,6 @@
 
     # Run unpatched dynamic binaries
     nix-ld.enable = true;
-  };
-
-  # Setup Docker and QEMU/Libvirt virtualization.
-  virtualisation = {
-    docker = { 
-      enable = true;
-    };
-    libvirtd = {
-      enable = true;
-      qemu = {
-        package = (pkgs.qemu_full.override {
-          enableDocs = false;
-          cephSupport = false;
-        });
-        runAsRoot = true;
-        swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [(pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd];
-        };
-      };
-    };
   };
 
   # List packages installed in system profile. To search, run:

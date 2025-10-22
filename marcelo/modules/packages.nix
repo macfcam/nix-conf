@@ -1,13 +1,8 @@
 { pkgs, lib, inputs, ... }:
 
 let
-  # Import stable packages
-  pkgsStable = import inputs.nixpkgs-stable {
-    system = pkgs.system;
-  };
-
-  teams-for-linux-2_6_0 = pkgsStable.teams-for-linux.override {
-    buildNpmPackage = args: pkgsStable.buildNpmPackage (args // rec {
+  teams-for-linux-2_6_0 = pkgs.teams-for-linux.override {
+    buildNpmPackage = args: pkgs.buildNpmPackage (args // rec {
       pname = "teams-for-linux";
       version = "2.6.0";
 
