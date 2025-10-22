@@ -41,7 +41,7 @@ with lib.hm.gvariant;
       default-size-columns = 130;
       default-size-rows = 40;
       delete-binding = "delete-sequence";
-      font = "FantasqueSansM Nerd Font Mono 12";
+      font = "JetBrainsMono Nerd Font Mono 11";
       foreground-color = "#cdd6f4";
       highlight-colors-set = false;
       login-shell = false;

@@ -28,9 +28,5 @@
 10.34.128.121         sonarqube-omni.lojasrenner.io
 10.34.128.121         rancher-azure-prod.lojasrenner.io
     '';
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ 1080 ];
-    };
   };
 }

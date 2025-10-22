@@ -26,9 +26,9 @@
         }
       ];
       userSettings = {
-        "editor.fontFamily" = "FantasqueSansM Nerd Font Mono";
-        "debug.console.fontFamily" = "FantasqueSansM Nerd Font Mono";
-        "terminal.integrated.fontFamily" = "FantasqueSansM Nerd Font Mono";
+        "editor.fontFamily" = "JetBrainsMono Nerd Font Mono";
+        "debug.console.fontFamily" = "JetBrainsMono Nerd Font Mono";
+        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font Mono";
 
         "window.autoDetectColorScheme" = true;
         "workbench.preferredLightColorTheme" = "Catppuccin Latte";
@@ -52,9 +52,9 @@
         "git.autofetch" = true;
         "explorer.confirmDragAndDrop" = false;
 
-        "debug.console.fontSize" = 14;
-        "editor.fontSize" = 14;
-        "terminal.integrated.fontSize" = 14;
+        "debug.console.fontSize" = 13;
+        "editor.fontSize" = 13;
+        "terminal.integrated.fontSize" = 13;
 
         "editor.largeFileOptimizations" = false;
         "workbench.iconTheme" = "catppuccin-mocha";
