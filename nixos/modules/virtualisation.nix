@@ -7,7 +7,7 @@
     libvirtd = {
       enable = true;
       qemu = {
-        package = (pkgs.qemu_full.override {
+        package = (pkgs.qemu_kvm.override {
           enableDocs = false;
           cephSupport = false;
         });
