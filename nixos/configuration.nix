@@ -110,6 +110,7 @@
     decibels
     epiphany
     geary
+    gnome-connections
     gnome-console
     gnome-contacts
     gnome-logs

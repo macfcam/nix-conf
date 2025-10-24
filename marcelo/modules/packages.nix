@@ -42,6 +42,7 @@ in {
     pciutils
     pyenv
     quickemu
+    remmina
     resources
     spotify
     telegram-desktop
