@@ -29,8 +29,8 @@ in
       enable = true;
       defaultFonts = {
         serif = [ "Noto Serif" ];
-        sansSerif = [ "Adwaita Sans" ];
-        monospace = [ "Adwaita Mono" ];
+        sansSerif = [ "Noto Sans" ];
+        monospace = [ "Noto Sans Mono" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

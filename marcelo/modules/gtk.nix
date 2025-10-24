@@ -11,7 +11,7 @@
     };
     
     font = {
-      name = "Adwaita Sans";
+      name = "Noto Sans";
       size = 10;
     };
 
