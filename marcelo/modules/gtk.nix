@@ -9,15 +9,15 @@
       package = pkgs.whitesur-cursors;
       name = "WhiteSur-cursors";
     };
-    
+
     font = {
       name = "Noto Sans";
       size = 10;
     };
 
-    iconTheme = { 
-      name = "Tela-dark";
-      package = pkgs.tela-icon-theme;
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     theme = {

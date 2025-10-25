@@ -16,7 +16,7 @@ with lib.hm.gvariant;
         "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
     };
-    
+
     # Gnome Terminal
     "org/gnome/terminal/legacy" = {
       default-show-menubar = false;
@@ -45,7 +45,7 @@ with lib.hm.gvariant;
       foreground-color = "#cdd6f4";
       highlight-colors-set = false;
       login-shell = false;
-      palette = [ 
+      palette = [
         "#45475a"
         "#f38ba8"
         "#a6e3a1"
@@ -61,7 +61,7 @@ with lib.hm.gvariant;
         "#74a8fc"
         "#f2aede"
         "#6bd7ca"
-        "#bac2de" 
+        "#bac2de"
       ];
       scroll-on-output = true;
       scrollback-lines = 10000;
@@ -72,7 +72,7 @@ with lib.hm.gvariant;
       use-theme-colors = false;
       visible-name = "Catppuccin Mocha";
     };
-    
+
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       document-font-name = "Noto Sans 10";
@@ -80,25 +80,25 @@ with lib.hm.gvariant;
       font-hinting = "full";
       font-name = "Noto Sans 10";
       gtk-theme = "adw-gtk3-dark";
-      icon-theme = "Tela-dark";
+      icon-theme = "Papirus-Dark";
       monospace-font-name = "Noto Mono 10";
     };
-    
+
     "org/gnome/desktop/input-sources" = {
       sources = [ (mkTuple [ "xkb" "us+alt-intl" ]) ];
       xkb-options = [ "lv3:switch" ]; # Make right ctrl alternate characters key
     };
-    
+
     "org/gnome/desktop/peripherals/keyboard" = {
       delay = lib.hm.gvariant.mkUint32 300;
       repeat-interval = lib.hm.gvariant.mkUint32 20;
     };
-    
+
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "default";
       speed = -0.5;
     };
-    
+
     "org/gnome/desktop/wm/keybindings" = {
       move-to-workspace-up = [ "<Super><Shift>Page_Up" ];
       move-to-workspace-down = [ "<Super><Shift>Page_Down" ];
@@ -114,7 +114,7 @@ with lib.hm.gvariant;
       sleep-inactive-ac-type = "nothing";
       sleep-inactive-battery-type = "nothing";
     };
-    
+
     "org/gnome/mutter" = {
       experimental-features = [
         "scale-monitor-framebuffer"

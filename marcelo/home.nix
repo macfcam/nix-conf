@@ -26,6 +26,7 @@ in
     ./modules/proxychains.nix
     ./modules/ssh.nix
     ./modules/vscodium.nix
+    ./modules/zeditor.nix
   ];
 
   home.packages = [
