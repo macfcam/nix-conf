@@ -38,6 +38,7 @@ in {
     libxslt
     mcfly
     neofetch
+    nil
     nixd
     oci-cli
     pciutils
