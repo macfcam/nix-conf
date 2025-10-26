@@ -44,6 +44,7 @@
       ui_font_size = 16;
       buffer_font_size = 12;
       buffer_font_family = "JetBrainsMono Nerd Font Mono";
+      soft_wrap = "editor_width";
     };
   };
 }
