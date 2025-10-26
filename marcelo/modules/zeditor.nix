@@ -10,6 +10,7 @@
       "dockerfile"
       "docker-compose"
       "git-firefly"
+      "latex"
       "nix"
       "python-snippets"
       "terraform"
