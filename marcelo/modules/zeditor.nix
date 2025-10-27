@@ -24,6 +24,12 @@
         light = "Catppuccin Latte";
       };
 
+      icon_theme = {
+        mode = "system";
+        dark = "Catppuccin Mocha";
+        light = "Catppuccin Latte";
+      };
+
       auto_update = false;
 
       terminal = {
