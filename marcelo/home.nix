@@ -1,4 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 let
   # Import Lens package from flake root (pkgs/lens.nix)
@@ -18,6 +24,7 @@ in
 
   imports = [
     ./modules/fish.nix
+    ./modules/git.nix
     ./modules/gnome.nix
     ./modules/gtk.nix
     ./modules/kitty.nix

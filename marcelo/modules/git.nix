@@ -5,8 +5,12 @@
     enable = true;
 
     # Default identity
-    userName = "Marcelo Alves";
-    userEmail = "alvesmarcelocf@proton.me";
+    settings = {
+      user = {
+        name = "Marcelo Alves";
+        email = "alvesmarcelocf@proton.me";
+      };
+    };
 
     # Conditional includes for work identity
     includes = [
@@ -21,7 +25,8 @@
       }
     ];
 
-    extraConfig = {
+    # Additional settings
+    settings = {
       pull.rebase = true;
     };
   };
