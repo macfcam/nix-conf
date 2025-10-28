@@ -11,7 +11,7 @@
     };
 
     font = {
-      name = "Noto Sans";
+      name = "Adwaita Sans";
       size = 10;
     };
 
@@ -26,11 +26,9 @@
     };
 
     gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=true
-        gtk-decoration-layout=icon:minimize,maximize,close
-        gtk-enable-animations=true
-      '';
+      gtk-application-prefer-dark-theme = true;
+      gtk-decoration-layout = "icon:minimize,maximize,close";
+      gtk-enable-animations = true;
     };
 
     gtk3.extraCss = ''
@@ -42,11 +40,9 @@
     '';
 
     gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=true
-        gtk-decoration-layout=icon:minimize,maximize,close
-        gtk-enable-animations=true
-      '';
+      gtk-application-prefer-dark-theme = true;
+      gtk-decoration-layout = "icon:minimize,maximize,close";
+      gtk-enable-animations = true;
     };
   };
 }
