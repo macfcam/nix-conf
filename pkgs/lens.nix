@@ -2,13 +2,13 @@
 
 let
   pname = "lens-desktop";
-  version = "2025.9.151055";
+  version = "2025.10.230725";
   proxy = "socks5h://192.168.122.100:1080";
   no_proxy = "localhost,127.0.0.1,0.0.0.0,mapeus.xyz";
 
   src = pkgs.fetchurl {
     url = "https://api.k8slens.dev/binaries/Lens-${version}-latest.x86_64.AppImage";
-    sha256 = "sha256-XIEAhda75yseNmGSbHwOSqkzSSWCHUiyZm1rf+eEqs0=";
+    sha256 = "sha256-FlpkXhgHg1gyWEtSpO03cVhFfAEUxv2dgViR0ptfU7s=";
   };
 
   meta = with pkgs.lib; {
@@ -23,7 +23,12 @@ let
   };
 in
 pkgs.appimageTools.wrapType2 {
-  inherit pname version src meta;
+  inherit
+    pname
+    version
+    src
+    meta
+    ;
 
   nativeBuildInputs = [ pkgs.makeWrapper ];
 
