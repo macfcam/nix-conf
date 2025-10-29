@@ -1,0 +1,8 @@
+keys:
+  - &marcelo_starscream age17atmht74cu6qjactum407lvcsfg5zz4t2uj43mlnu07lwq45zaxse0uxnf
+
+creation_rules:
+  - path_regex: secrets/marcelo\.yaml$
+    key_groups:
+      - age:
+          - *marcelo_starscream

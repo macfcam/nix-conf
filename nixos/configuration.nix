@@ -2,44 +2,54 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      # Boot config
-      ./modules/boot.nix
+    # Boot config
+    ./modules/boot.nix
 
-      # Font config
-      ./modules/fonts.nix
+    # Font config
+    ./modules/fonts.nix
 
-      # Hardware config
-      ./modules/hardware.nix
+    # Hardware config
+    ./modules/hardware.nix
 
-      # Network config
-      ./modules/networking.nix
+    # Network config
+    ./modules/networking.nix
 
-      # Program and package config
-      ./modules/packages.nix
-      
-      # Services config
-      ./modules/services.nix
+    # Program and package config
+    ./modules/packages.nix
 
-      # System config
-      ./modules/system.nix
+    # SOPS config
+    ./modules/secrets.nix
 
-      # Users config
-      ./modules/users.nix
+    # Services config
+    ./modules/services.nix
 
-      # Virtualization config
-      ./modules/virtualisation.nix
-    ];
+    # System config
+    ./modules/system.nix
+
+    # Users config
+    ./modules/users.nix
+
+    # Virtualization config
+    ./modules/virtualisation.nix
+  ];
 
   # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Nixpkgs related settings
   nixpkgs = {
