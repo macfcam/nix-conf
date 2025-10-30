@@ -1,1 +1,5 @@
 result
+
+# SOPS age keys - NEVER commit these!
+**/keys.txt
+.config/sops/age/

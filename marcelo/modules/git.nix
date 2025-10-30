@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.git = {
@@ -10,6 +10,7 @@
         name = "Marcelo Alves";
         email = "alvesmarcelocf@proton.me";
       };
+      pull.rebase = true;
     };
 
     # Conditional includes for work identity
@@ -24,10 +25,5 @@
         };
       }
     ];
-
-    # Additional settings
-    settings = {
-      pull.rebase = true;
-    };
   };
 }
