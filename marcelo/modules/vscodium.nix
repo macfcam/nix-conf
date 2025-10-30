@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.vscode = {
@@ -6,25 +6,28 @@
     package = pkgs.vscodium;
 
     profiles.default = {
-      extensions = with pkgs.vscode-extensions; [
-        catppuccin.catppuccin-vsc
-        catppuccin.catppuccin-vsc-icons
-        eamodio.gitlens
-        hashicorp.terraform
-        jnoortheen.nix-ide
-        ms-azuretools.vscode-containers
-        ms-azuretools.vscode-docker
-        ms-python.debugpy
-        ms-python.python
-        redhat.vscode-yaml
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "terraform";
-          publisher = "4ops";
-          version = "0.2.1";
-          sha256 = "sha256-r5W5S9hIn4AlVtr6y7HoVwtJqZ+vYQgukj/ehJQRwKQ="; # ⚠️ fill in hash with nix error suggestion
-        }
-      ];
+      extensions =
+        with pkgs.vscode-extensions;
+        [
+          catppuccin.catppuccin-vsc
+          catppuccin.catppuccin-vsc-icons
+          eamodio.gitlens
+          hashicorp.terraform
+          jnoortheen.nix-ide
+          ms-azuretools.vscode-containers
+          ms-azuretools.vscode-docker
+          ms-python.debugpy
+          ms-python.python
+          redhat.vscode-yaml
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "terraform";
+            publisher = "4ops";
+            version = "0.2.1";
+            sha256 = "sha256-r5W5S9hIn4AlVtr6y7HoVwtJqZ+vYQgukj/ehJQRwKQ="; # ⚠️ fill in hash with nix error suggestion
+          }
+        ];
       userSettings = {
         "editor.fontFamily" = "JetBrainsMono Nerd Font Mono";
         "debug.console.fontFamily" = "JetBrainsMono Nerd Font Mono";
