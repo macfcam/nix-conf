@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.kitty = {
@@ -26,7 +26,7 @@
       foreground = "#cdd6f4";
       background = "#1e1e2e";
       selection_foreground = "#1e1e2e";
-      selection_background ="#f5e0dc";
+      selection_background = "#f5e0dc";
 
       # Cursor colors
       cursor = "#f5e0dc";

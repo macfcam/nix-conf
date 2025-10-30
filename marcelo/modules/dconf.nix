@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 with lib.hm.gvariant;
 
@@ -85,7 +85,12 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "us+alt-intl" ]) ];
+      sources = [
+        (mkTuple [
+          "xkb"
+          "us+alt-intl"
+        ])
+      ];
       xkb-options = [ "lv3:switch" ]; # Make right ctrl alternate characters key
     };
 

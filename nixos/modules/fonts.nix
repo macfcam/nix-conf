@@ -1,5 +1,4 @@
-# nixos/modules/fonts.nix
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   nf = pkgs.nerd-fonts;
@@ -7,20 +6,23 @@ in
 
 {
   # Install fonts system-wide
-  fonts.packages = with pkgs; with nf; [
-    dejavu_fonts
-    ibm-plex
-    liberation_ttf
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
+  fonts.packages =
+    with pkgs;
+    with nf;
+    [
+      dejavu_fonts
+      ibm-plex
+      liberation_ttf
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
 
-    # nerd fonts
-    code-new-roman
-    commit-mono
-    fantasque-sans-mono
-    jetbrains-mono
-  ];
+      # nerd fonts
+      code-new-roman
+      commit-mono
+      fantasque-sans-mono
+      jetbrains-mono
+    ];
 
   # Set default font families for the entire system
   fonts = {

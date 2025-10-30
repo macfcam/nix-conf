@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ ... }:
 
 {
   # Point to your secrets file

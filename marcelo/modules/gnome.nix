@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -16,7 +16,7 @@
     resources
   ];
 
-  imports = [ 
+  imports = [
     ./dconf.nix
   ];
 }
