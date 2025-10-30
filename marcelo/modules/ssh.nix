@@ -69,13 +69,11 @@ in
         user = "opc";
         hostname = "10.206.0.84";
         identityFile = "~/.ssh/oci_rsa_resource";
-        proxyCommand = "nc -X 5 -x ${cfg.proxy.hostPort} %h %p";
       };
       "rnn-sup-sre-automations-prod" = {
         user = "sre_automations";
         hostname = "10.34.129.30";
         identityFile = "~/.ssh/id_rsa_sis_sre_automations";
-        proxyCommand = "nc -X 5 -x ${cfg.proxy.hostPort} %h %p";
       };
     };
   };
