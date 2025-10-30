@@ -36,6 +36,7 @@ in
       aria2
       azure-cli
       chromium
+      code-cursor
       cdrtools
       docker-compose
       eza
