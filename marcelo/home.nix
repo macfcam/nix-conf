@@ -11,7 +11,7 @@ let
   cfg = import ./config.nix;
 
   # Import packages from flake root
-  lens = import (inputs.self + "/pkgs/lens.nix") { inherit pkgs; };
+  lens = import (inputs.self + "/pkgs/lens.nix") { inherit pkgs cfg; };
   teams-for-linux = import (inputs.self + "/pkgs/teams-for-linux.nix") { inherit pkgs; };
 in
 {
