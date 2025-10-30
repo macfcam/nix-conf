@@ -1,15 +1,19 @@
-{ config, pkgs, ... }:
+{ ... }:
+
+let
+  cfg = import ../config.nix;
+in
 
 {
   programs.fish = {
     enable = true;
-    
+
     interactiveShellInit = ''
       mcfly init fish | source
       pyenv init - fish | source
       zoxide init fish | source
     '';
-    
+
     shellAliases = {
       "ls" = "eza --color=auto --group-directories-first";
       "ll" = "ls -l";
@@ -31,8 +35,8 @@
       "gps" = "git push";
       "reload_kitty" = "kill -SIGUSR1 $KITTY_PID";
 
-      # proxy aliases
-      "kubeproxy" = "http_proxy=socks5h://192.168.122.100:1080 https_proxy=socks5h://192.168.122.100:1080";
+      # proxy variables
+      "useproxy" = "http_proxy=${cfg.proxy.socks5Url} https_proxy=${cfg.proxy.socks5Url}";
     };
 
     functions = {

@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
+
+let
+  cfg = import ../config.nix;
+in
 
 {
   # Install proxychains-ng via Home Manager
@@ -19,7 +23,7 @@
 
     # Proxy list format: type host port [user pass]
     [ProxyList]
-    socks5  192.168.122.100 1080
+    socks5  ${cfg.proxy.host} ${toString cfg.proxy.port}
   '';
 
   # Optional alias for convenience

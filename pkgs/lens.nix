@@ -1,10 +1,10 @@
-{ pkgs }:
+{ pkgs, cfg }:
 
 let
   pname = "lens-desktop";
   version = "2025.10.230725";
-  proxy = "socks5h://192.168.122.100:1080";
-  no_proxy = "localhost,127.0.0.1,0.0.0.0,mapeus.xyz";
+  proxy = cfg.proxy.socks5Url;
+  no_proxy = cfg.proxy.noProxy;
 
   src = pkgs.fetchurl {
     url = "https://api.k8slens.dev/binaries/Lens-${version}-latest.x86_64.AppImage";
