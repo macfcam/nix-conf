@@ -10,12 +10,12 @@
       };
       window = {
         dimensions = {
-          columns = 130;
-          lines = 40;
+          columns = 150;
+          lines = 50;
         };
         padding = {
-          x = 15;
-          y = 15;
+          x = 20;
+          y = 20;
         };
         dynamic_padding = true;
         startup_mode = "Windowed";
@@ -41,7 +41,7 @@
           family = "JetBrainsMono Nerd Font Mono";
           style = "Bold Italic";
         };
-        size = 12;
+        size = 10;
       };
       cursor = {
         style = {
@@ -51,6 +51,15 @@
       };
       terminal = {
         shell = "/etc/profiles/per-user/marcelo/bin/fish";
+      };
+      keyboard = {
+        bindings = [
+          {
+            key = "N";
+            mods = "Control|Shift";
+            action = "CreateNewWindow";
+          }
+        ];
       };
     };
   };
