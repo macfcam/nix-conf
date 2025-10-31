@@ -25,6 +25,7 @@ in
   };
 
   imports = [
+    ./modules/alacritty.nix
     ./modules/fish.nix
     ./modules/git.nix
     ./modules/gnome.nix
