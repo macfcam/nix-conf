@@ -33,6 +33,7 @@
   # Install some packages
   programs = {
     firefox.enable = true;
+    steam.enable = true;
     virt-manager.enable = true;
 
     # Run unpatched dynamic binaries
