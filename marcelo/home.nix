@@ -26,6 +26,7 @@ in
 
   imports = [
     ./modules/alacritty.nix
+    ./modules/bash.nix
     ./modules/fish.nix
     ./modules/git.nix
     ./modules/gnome.nix
@@ -35,6 +36,7 @@ in
     ./modules/proxychains.nix
     ./modules/secrets.nix
     ./modules/ssh.nix
+    ./modules/starship.nix
     ./modules/tmux.nix
     ./modules/vscodium.nix
     ./modules/zeditor.nix
