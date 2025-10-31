@@ -10,7 +10,6 @@
     gnomeExtensions.dash-to-dock
     gnome-extension-manager
     gnome-shell-extensions
-    gnome-terminal
     gnome-tweaks
     nautilus
     resources

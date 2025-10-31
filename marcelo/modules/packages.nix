@@ -19,7 +19,6 @@
     htop
     jq
     kind
-    kitty
     kubectl
     kubectx
     kubernetes-helm
