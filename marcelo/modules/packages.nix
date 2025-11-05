@@ -9,7 +9,6 @@
     ansible
     arch-install-scripts
     aria2
-    azure-cli
     chromium
     code-cursor
     cdrtools
@@ -27,11 +26,8 @@
     neofetch
     nil
     nixd
-    oci-cli
     pciutils
     pyenv
-    quickemu
-    remmina
     resources
     sops
     ssh-to-age
@@ -39,7 +35,6 @@
     telegram-desktop
     terraform
     terragrunt
-    velero
     virt-manager
     wget
     wl-clipboard

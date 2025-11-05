@@ -1,4 +1,4 @@
-{ pkgs, cfg }:
+{ pkgs, ... }:
 
 let
   pname = "lens-desktop";

@@ -31,14 +31,6 @@
       gtk-enable-animations = true;
     };
 
-    gtk3.extraCss = ''
-      @import 'colors.css';
-      VteTerminal, TerminalScreen, vte-terminal {
-        padding: 20px 20px 20px 20px;
-        -VteTerminal-inner-border: 20px 20px 20px 20px;
-      }
-    '';
-
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
       gtk-decoration-layout = "icon:minimize,maximize,close";

@@ -5,12 +5,8 @@
 }:
 
 let
-  # Import config
-  cfg = import ./config.nix;
-
   # Import packages from flake root
-  lens = import (inputs.self + "/pkgs/lens.nix") { inherit pkgs cfg; };
-  teams-for-linux = import (inputs.self + "/pkgs/teams-for-linux.nix") { inherit pkgs; };
+  lens = import (inputs.self + "/pkgs/lens.nix") { inherit pkgs; };
 in
 {
   home.username = "marcelo";
@@ -33,7 +29,6 @@ in
     ./modules/gtk.nix
     ./modules/neovim.nix
     ./modules/packages.nix
-    ./modules/proxychains.nix
     ./modules/secrets.nix
     ./modules/ssh.nix
     ./modules/starship.nix
@@ -44,7 +39,6 @@ in
 
   home.packages = [
     lens
-    teams-for-linux
   ];
 
   programs.home-manager.enable = true;
