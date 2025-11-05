@@ -1,9 +1,5 @@
 { ... }:
 
-let
-  cfg = import ../config.nix;
-in
-
 {
   programs.fish = {
     enable = true;

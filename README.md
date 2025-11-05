@@ -5,22 +5,45 @@ This is my personal Nix config. You can copy from it, but it's not intended for 
 Structure:
 
 ```
+.
 ├── marcelo
 │   ├── modules
+│   │   ├── alacritty.nix
+│   │   ├── bash.nix
+│   │   ├── dconf.nix
 │   │   ├── fish.nix
-│   │   ├── fonts.nix
+│   │   ├── git.nix
 │   │   ├── gnome.nix
+│   │   ├── gtk.nix
 │   │   ├── neovim.nix
 │   │   ├── packages.nix
-│   │   ├── proxychains.nix
+│   │   ├── secrets.nix
 │   │   ├── ssh.nix
-│   │   └── vscodium.nix
+│   │   ├── starship.nix
+│   │   ├── tmux.nix
+│   │   ├── vscodium.nix
+│   │   └── zeditor.nix
 │   └── home.nix
 ├── nixos
+│   ├── modules
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── hardware.nix
+│   │   ├── networking.nix
+│   │   ├── packages.nix
+│   │   ├── secrets.nix
+│   │   ├── services.nix
+│   │   ├── system.nix
+│   │   ├── users.nix
+│   │   └── virtualisation.nix
 │   ├── configuration.nix
 │   └── hardware-configuration.nix
 ├── pkgs
 │   └── lens.nix
+├── secrets
+│   └── marcelo.yaml
+├── .gitignore
+├── .sops.yaml
 ├── flake.lock
 ├── flake.nix
 └── README.md
