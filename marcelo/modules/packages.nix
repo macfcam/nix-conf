@@ -31,7 +31,6 @@
     resources
     sops
     ssh-to-age
-    spotify
     telegram-desktop
     terraform
     terragrunt
