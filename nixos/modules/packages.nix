@@ -16,6 +16,7 @@
     gnome-tour
     gnome-user-docs
     gnome-user-share
+    showtime
     simple-scan
     totem
     yelp
