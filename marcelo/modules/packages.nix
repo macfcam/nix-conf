@@ -17,10 +17,6 @@
     git
     htop
     jq
-    kind
-    kubectl
-    kubectx
-    kubernetes-helm
     libxslt
     mcfly
     neofetch

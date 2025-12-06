@@ -27,6 +27,7 @@ in
     ./modules/git.nix
     ./modules/gnome.nix
     ./modules/gtk.nix
+    ./modules/kubernetes.nix
     ./modules/neovim.nix
     ./modules/packages.nix
     ./modules/secrets.nix
