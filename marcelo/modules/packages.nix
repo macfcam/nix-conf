@@ -9,6 +9,7 @@
     ansible
     arch-install-scripts
     aria2
+    bisq2
     chromium
     code-cursor
     cdrtools
