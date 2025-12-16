@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  programs.ptyxis = {
+    enable = true;
+  };
+}

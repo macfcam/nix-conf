@@ -22,8 +22,8 @@
           {
             name = "terraform";
             publisher = "4ops";
-            version = "0.2.1";
-            sha256 = "sha256-r5W5S9hIn4AlVtr6y7HoVwtJqZ+vYQgukj/ehJQRwKQ="; # ⚠️ fill in hash with nix error suggestion
+            version = "0.2.5";
+            sha256 = "sha256-y5LljxK8V9Fir9EoG8g9N735gISrlMg3czN21qF/KjI=";
           }
         ];
       userSettings = {
@@ -78,6 +78,7 @@
 
         "terminal.external.linuxExec" = "kitty";
         "terminal.integrated.stickyScroll.enabled" = false;
+        "terminal.integrated.suggest.enabled" = false;
       };
     };
   };
