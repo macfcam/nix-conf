@@ -11,7 +11,6 @@
     aria2
     bisq2
     chromium
-    code-cursor
     cdrtools
     docker-compose
     eza
@@ -25,6 +24,7 @@
     nixd
     pciutils
     pyenv
+    remmina
     resources
     sops
     ssh-to-age

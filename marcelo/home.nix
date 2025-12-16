@@ -5,8 +5,12 @@
 }:
 
 let
+  # Import config
+  cfg = import ./config.nix;
+
   # Import packages from flake root
   lens = import (inputs.self + "/pkgs/lens.nix") { inherit pkgs; };
+  # teams-for-linux = import (inputs.self + "/pkgs/teams-for-linux.nix") { inherit pkgs; };
 in
 {
   home.username = "marcelo";
@@ -40,6 +44,7 @@ in
 
   home.packages = [
     lens
+    # teams-for-linux
   ];
 
   programs.home-manager.enable = true;

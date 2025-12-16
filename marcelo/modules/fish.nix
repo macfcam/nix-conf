@@ -1,5 +1,9 @@
 { ... }:
 
+let
+  cfg = import ../config.nix;
+in
+
 {
   programs.fish = {
     enable = true;
@@ -34,6 +38,22 @@
 
     functions = {
       genpasswd = "LC_ALL=C tr -dc 'A-Za-z0-9_!@#$%^&*()-_=+' </dev/random | head -c 32 | xargs | tr -d '\n'";
+      set_proxy = {
+        description = "Set proxy environment variables";
+        body = ''
+          set -gx http_proxy ${cfg.proxy.socks5Url}
+          set -gx https_proxy ${cfg.proxy.socks5Url}
+          echo "Proxy settings applied: socks5h://192.168.122.100:1080"
+        '';
+      };
+      unset_proxy = {
+        description = "Unset proxy environment variables";
+        body = ''
+          set -u http_proxy
+          set -u https_proxy
+          echo "Proxy settings removed."
+        '';
+      };
     };
   };
 
