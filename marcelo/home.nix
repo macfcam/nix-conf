@@ -33,6 +33,7 @@ in
     ./modules/kubernetes.nix
     ./modules/neovim.nix
     ./modules/packages.nix
+    ./modules/ptyxis.nix
     ./modules/secrets.nix
     ./modules/ssh.nix
     ./modules/starship.nix
