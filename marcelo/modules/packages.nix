@@ -28,6 +28,7 @@
     resources
     sops
     ssh-to-age
+    teams-for-linux
     telegram-desktop
     terraform
     terragrunt
