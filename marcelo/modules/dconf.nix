@@ -71,5 +71,12 @@ with lib.hm.gvariant;
         "xwayland-native-scaling"
       ];
     };
+
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-schedule-from = "18.0";
+      night-light-schedule-to = "06.0";
+      night-light-temperature = lib.hm.gvariant.mkUint32 4700;
+    };
   };
 }
