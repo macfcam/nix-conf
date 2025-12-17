@@ -15,14 +15,17 @@ Structure:
 │   │   ├── git.nix
 │   │   ├── gnome.nix
 │   │   ├── gtk.nix
+│   │   ├── kubernetes.nix
 │   │   ├── neovim.nix
 │   │   ├── packages.nix
+│   │   ├── ptyxis.nix
 │   │   ├── secrets.nix
 │   │   ├── ssh.nix
 │   │   ├── starship.nix
 │   │   ├── tmux.nix
-│   │   ├── vscodium.nix
+│   │   ├── vscode.nix
 │   │   └── zeditor.nix
+│   ├── config.nix
 │   └── home.nix
 ├── nixos
 │   ├── modules
@@ -42,8 +45,6 @@ Structure:
 │   └── lens.nix
 ├── secrets
 │   └── marcelo.yaml
-├── .gitignore
-├── .sops.yaml
 ├── flake.lock
 ├── flake.nix
 └── README.md
