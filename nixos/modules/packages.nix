@@ -22,7 +22,7 @@
     yelp
   ];
 
-  # List packages installed in system profile. To search, run:
+  # Packages installed at system level
   environment.systemPackages = with pkgs; [
     dnsmasq
     power-profiles-daemon
