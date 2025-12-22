@@ -12,6 +12,9 @@
     # Boot config
     ./modules/boot.nix
 
+    # Cockpit config
+    ./modules/cockpit.nix
+
     # Font config
     ./modules/fonts.nix
 
