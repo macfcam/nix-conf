@@ -51,11 +51,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-terragrunt": {
+      "locked": {
+        "lastModified": 1765486957,
+        "narHash": "sha256-6galzk0mKfqF2dXnsmhyFrdf+l5JRSdEWVzbW/rXZoM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "be91b74c827a7bff321456295cd1b5a6516f99a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "be91b74c827a7bff321456295cd1b5a6516f99a4",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-terragrunt": "nixpkgs-terragrunt",
         "sops-nix": "sops-nix"
       }
     },
