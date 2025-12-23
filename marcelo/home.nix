@@ -9,7 +9,7 @@ let
   cfg = import ./config.nix;
 
   # Import packages from flake root
-  lens = import (inputs.self + "/pkgs/lens.nix") { inherit pkgs; };
+  lens = import (inputs.self + "/pkgs/lens-desktop/pkg.nix") { inherit pkgs; };
 in
 {
   home.username = "marcelo";
