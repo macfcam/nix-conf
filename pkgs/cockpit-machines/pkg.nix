@@ -1,4 +1,9 @@
-{ lib, stdenv, fetchzip, gettext }:
+{
+  lib,
+  stdenv,
+  fetchzip,
+  gettext,
+}:
 
 stdenv.mkDerivation rec {
   pname = "cockpit-machines";
@@ -13,13 +18,30 @@ stdenv.mkDerivation rec {
     gettext
   ];
 
-  makeFlags = [ "DESTDIR=$(out)" "PREFIX=" ];
+  makeFlags = [
+    "DESTDIR=$(out)"
+    "PREFIX="
+  ];
 
   postPatch = ''
     substituteInPlace Makefile \
-      --replace /usr/share $out/share
+      --replace-warn /usr/share $out/share
+
+    # Work around Makefile generating these via git (tarball has no .git directory)
     touch pkg/lib/cockpit.js
     touch pkg/lib/cockpit-po-plugin.js
+
+    # NixOS: patch the manifest condition to use the NixOS dbus policy path
+    # instead of /usr/share/... (which doesn't exist on NixOS)
+    substituteInPlace dist/manifest.json \
+      --replace-fail '"/usr/share/dbus-1/system.d/org.libvirt.conf"' \
+                     '"/run/current-system/sw/share/dbus-1/system.d/org.libvirt.conf"'
+
+    substituteInPlace src/manifest.json \
+      --replace-fail '"/usr/share/dbus-1/system.d/org.libvirt.conf"' \
+                     '"/run/current-system/sw/share/dbus-1/system.d/org.libvirt.conf"'
+
+    # Touch dist/manifest.json so Make considers it up-to-date and won't try to rebuild it
     touch dist/manifest.json
   '';
 
