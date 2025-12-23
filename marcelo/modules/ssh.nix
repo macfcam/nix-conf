@@ -18,6 +18,11 @@ in
         hostname = "192.168.100.1";
         identityFile = "~/.ssh/id_ed25519";
       };
+      "ubuntu-work" = {
+        user = "marcelo";
+        hostname = "192.168.122.100";
+        identityFile = "~/.ssh/id_ed25519";
+      };
 
       # SSH config for work related hosts
       "10.208.*.* 10.206.*.* 172.25.*.* 10.33.*.* 10.34.*.* 10.100.*.*" = {
