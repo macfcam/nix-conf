@@ -16,6 +16,7 @@
           ms-azuretools.vscode-docker
           ms-python.debugpy
           ms-python.python
+          ms-vscode-remote.remote-ssh
           redhat.vscode-yaml
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
