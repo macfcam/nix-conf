@@ -11,7 +11,7 @@
     };
 
     font = {
-      name = "Adwaita Sans";
+      name = "Ubuntu Sans";
       size = 10;
     };
 

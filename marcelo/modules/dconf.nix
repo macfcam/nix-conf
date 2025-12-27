@@ -19,13 +19,13 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      document-font-name = "Adwaita Sans 10";
+      document-font-name = "Noto Sans 10";
       font-antialiasing = "rgba";
       font-hinting = "full";
-      font-name = "Adwaita Sans 10";
+      font-name = "Ubuntu Sans 10";
       gtk-theme = "adw-gtk3-dark";
       icon-theme = "Papirus-Dark";
-      monospace-font-name = "Adwaita Mono 10";
+      monospace-font-name = "Ubuntu Mono 10";
     };
 
     "org/gnome/desktop/input-sources" = {
