@@ -12,7 +12,7 @@
 
     font = {
       name = "Ubuntu Sans";
-      size = 10;
+      size = 11;
     };
 
     iconTheme = {
