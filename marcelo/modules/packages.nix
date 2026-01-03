@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-terragrunt,
   ...
 }:
 
@@ -32,11 +31,10 @@
     teams-for-linux
     telegram-desktop
     terraform
+    terragrunt
     virt-manager
+    vlc
     wget
     wl-clipboard
-  ] ++ [
-    # Use terragrunt 0.94.0 from specific nixpkgs commit
-    pkgs-terragrunt.terragrunt
   ];
 }
