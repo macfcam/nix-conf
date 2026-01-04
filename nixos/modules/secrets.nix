@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   # Point to your secrets file
@@ -14,13 +14,14 @@
 
     # Define secrets that should be available system-wide
     secrets = {
-      # Example: proxy credentials (if needed)
-      # proxy_username = {
-      #   owner = "marcelo";
-      # };
-      # proxy_password = {
-      #   owner = "marcelo";
-      # };
+      cloudflare_api_token = { };
+    };
+
+    # Create an env file for Traefik with the Cloudflare token
+    templates."traefik-cloudflare.env" = {
+      content = ''
+        ${config.sops.placeholder.cloudflare_api_token}
+      '';
     };
   };
 }
