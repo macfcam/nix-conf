@@ -9,6 +9,9 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
+    # Run Nix-based projects in Docker Compose using Arion
+    ./modules/arion/arion.nix
+
     # Boot config
     ./modules/boot.nix
 
