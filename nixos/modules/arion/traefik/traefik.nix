@@ -1,8 +1,4 @@
-{ traefikEnvFile, ... }:
-
-let
-  configDir = toString ./.;
-in
+{ traefikEnvFile, traefikConfigDir, ... }:
 
 {
   services = {
@@ -26,7 +22,9 @@ in
         ];
 
         volumes = [
-          "${configDir}/config:/etc/traefik:ro"
+          # Mount config from a proper derivation - this ensures the store
+          # path is tracked as a dependency and won't be garbage collected
+          "${traefikConfigDir}:/etc/traefik:ro"
           "/var/run/docker.sock:/var/run/docker.sock:ro"
           "certs:/certs"
         ];
