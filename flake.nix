@@ -14,10 +14,16 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    arion = {
+      url = "github:hercules-ci/arion";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs@{
+      arion,
       nixpkgs,
       home-manager,
       sops-nix,
@@ -29,6 +35,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./nixos/configuration.nix
+            arion.nixosModules.arion
             sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
             {
