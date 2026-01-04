@@ -18,7 +18,6 @@
           ms-python.python
           ms-vscode-remote.remote-ssh
           redhat.vscode-yaml
-          tamasfe.even-better-toml
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
