@@ -6,9 +6,15 @@
       service = {
         image = "linuxserver/qbittorrent:latest";
         container_name = "qbittorrent";
-        restart = "on-failure:3";
+        restart = "unless-stopped";
         healthcheck = {
-          test = [ "CMD" "curl" "-fsS" "http://127.0.0.1:8080/api/v2/app/version" "https://icanhazip.com"];
+          test = [
+            "CMD"
+            "curl"
+            "-fsS"
+            "http://127.0.0.1:8080/api/v2/app/version"
+            "https://icanhazip.com"
+          ];
           interval = "5s";
           timeout = "5s";
           start_period = "30s";
@@ -23,8 +29,8 @@
         };
 
         volumes = [
-          "qbittorrent_config:/config"
-          "/mnt/myexternaldisk/streaming/media:/data/media"
+          "/home/marcelo/docker/streaming/configs/qbittorrent:/config"
+          "/mnt/myexternaldisk/streaming/torrents:/data/torrents"
         ];
 
         networks = [ "proxy" ];
@@ -43,9 +49,14 @@
       service = {
         image = "linuxserver/radarr:latest";
         container_name = "radarr";
-        restart = "on-failure:3";
+        restart = "unless-stopped";
         healthcheck = {
-          test = [ "CMD" "curl" "-fsS" "http://127.0.0.1:7878/ping" ];
+          test = [
+            "CMD"
+            "curl"
+            "-fsS"
+            "http://127.0.0.1:7878/ping"
+          ];
           interval = "5s";
           timeout = "5s";
           start_period = "30s";
@@ -61,7 +72,7 @@
         };
 
         volumes = [
-          "radarr_config:/config"
+          "/home/marcelo/docker/streaming/configs/radarr:/config"
           "/mnt/myexternaldisk/streaming:/data"
         ];
 
@@ -81,9 +92,14 @@
       service = {
         image = "linuxserver/sonarr:latest";
         container_name = "sonarr";
-        restart = "on-failure:3";
+        restart = "unless-stopped";
         healthcheck = {
-          test = [ "CMD" "curl" "-fsS" "http://127.0.0.1:8989/ping" ];
+          test = [
+            "CMD"
+            "curl"
+            "-fsS"
+            "http://127.0.0.1:8989/ping"
+          ];
           interval = "5s";
           timeout = "5s";
           start_period = "30s";
@@ -99,12 +115,12 @@
         };
 
         volumes = [
-          "sonarr_config:/config"
+          "/home/marcelo/docker/streaming/configs/sonarr:/config"
           "/mnt/myexternaldisk/streaming:/data"
         ];
 
         networks = [ "proxy" ];
-        
+
         labels = {
           "traefik.enable" = "true";
           "traefik.http.routers.sonarr.rule" = "Host(`sonarr-sc.mapeus.xyz`)";
@@ -119,9 +135,14 @@
       service = {
         image = "linuxserver/bazarr:latest";
         container_name = "bazarr";
-        restart = "on-failure:3";
+        restart = "unless-stopped";
         healthcheck = {
-          test = [ "CMD" "curl" "-fsS" "http://127.0.0.1:6767/" ];
+          test = [
+            "CMD"
+            "curl"
+            "-fsS"
+            "http://127.0.0.1:6767/"
+          ];
           interval = "5s";
           timeout = "5s";
           start_period = "30s";
@@ -135,7 +156,7 @@
         };
 
         volumes = [
-          "bazarr_config:/config"
+          "/home/marcelo/docker/streaming/configs/bazarr:/config"
           "/mnt/myexternaldisk/streaming/media:/data/media"
         ];
 
@@ -155,7 +176,7 @@
       service = {
         image = "ghcr.io/yoori/flare-bypasser:latest";
         container_name = "flare-bypasser";
-        restart = "on-failure:3";
+        restart = "unless-stopped";
 
         environment = {
           "UNUSED" = "false";
@@ -172,9 +193,14 @@
       service = {
         image = "linuxserver/prowlarr:latest";
         container_name = "prowlarr";
-        restart = "on-failure:3";
+        restart = "unless-stopped";
         healthcheck = {
-          test = [ "CMD" "curl" "-fsS" "http://127.0.0.1:9696/ping" ];
+          test = [
+            "CMD"
+            "curl"
+            "-fsS"
+            "http://127.0.0.1:9696/ping"
+          ];
           interval = "5s";
           timeout = "5s";
           start_period = "30s";
@@ -188,11 +214,11 @@
         };
 
         volumes = [
-          "prowlarr_config:/config"
+          "/home/marcelo/docker/streaming/configs/prowlarr:/config"
         ];
 
         networks = [ "proxy" ];
-        
+
         labels = {
           "traefik.enable" = "true";
           "traefik.http.routers.prowlarr.rule" = "Host(`prowlarr-sc.mapeus.xyz`)";
@@ -207,8 +233,8 @@
       service = {
         image = "linuxserver/jellyfin:latest";
         container_name = "jellyfin";
-        restart = "on-failure:3";
-        
+        restart = "unless-stopped";
+
         environment = {
           "GUID" = "0";
           "PUID" = "0";
@@ -216,7 +242,7 @@
         };
 
         volumes = [
-          "jellyfin_config:/config"
+          "/home/marcelo/docker/streaming/configs/jellyfin:/config"
           "/mnt/myexternaldisk/streaming/media:/data/media"
         ];
 
@@ -236,9 +262,15 @@
       service = {
         image = "ghcr.io/fallenbagel/jellyseerr:latest";
         container_name = "jellyseerr";
-        restart = "on-failure:3";
+        restart = "unless-stopped";
         healthcheck = {
-          test = [ "CMD" "wget" "http://127.0.0.1:5055/api/v1/status" "-qO" "/dev/null" ];
+          test = [
+            "CMD"
+            "wget"
+            "http://127.0.0.1:5055/api/v1/status"
+            "-qO"
+            "/dev/null"
+          ];
           interval = "5s";
           timeout = "5s";
           start_period = "30s";
@@ -250,7 +282,7 @@
         };
 
         volumes = [
-          "jellyseerr_config:/app/config"
+          "/home/marcelo/docker/streaming/configs/jellyseerr:/app/config"
         ];
 
         networks = [ "proxy" ];
@@ -269,18 +301,7 @@
   networks = {
     proxy = {
       name = "proxy";
-    };
-  };
-
-  docker-compose = {
-    volumes = {
-      qbittorrent_config = { };
-      radarr_config = { };
-      sonarr_config = { };
-      bazarr_config = { };
-      prowlarr_config = { };
-      jellyfin_config = { };
-      jellyseerr_config = { };
+      external = true;
     };
   };
 }
