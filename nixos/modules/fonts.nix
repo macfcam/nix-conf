@@ -29,9 +29,9 @@ in
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = [ "Noto Serif" ];
-        sansSerif = [ "Noto Sans" ];
-        monospace = [ "DejaVu Sans Mono:style=Book" ];
+        serif = [ "IBM Plex Serif" ];
+        sansSerif = [ "IBM Plex Sans" ];
+        monospace = [ "IBM Plex Mono" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };

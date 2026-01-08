@@ -11,7 +11,7 @@
     };
 
     font = {
-      name = "Ubuntu Sans";
+      name = "IBM Plex Sans";
       size = 11;
     };
 
