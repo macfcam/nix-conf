@@ -42,20 +42,19 @@
   };
 
   fileSystems."/mnt/myexternaldisk" = {
-    device = "/dev/disk/by-uuid/2ADB59CE560FF235";
-    fsType = "ntfs";
+    device = "/dev/disk/by-uuid/5db6bbf9-6356-4ac9-a561-195be32338b3";
+    fsType = "ext4";
     options = [
-      "rw"
-      "nosuid"
-      "nodev"
-      "relatime"
-      "user_id=0"
-      "group_id=0"
-      "allow_other"
-      "blksize=4096"
+      "noatime"
+      "nodiratime"
+      "commit=60"
       "x-gvfs-show"
     ];
   };
+
+  systemd.tmpfiles.rules = [
+    "d /mnt/myexternaldisk 0755 marcelo users -"
+  ];
 
   swapDevices = [ ];
 
