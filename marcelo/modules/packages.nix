@@ -22,6 +22,7 @@
     neofetch
     nil
     nixd
+    nvd
     pciutils
     pyenv
     remmina
