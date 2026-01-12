@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  project.name = "streaming";
+
   services = {
     qbittorrent = {
       service = {

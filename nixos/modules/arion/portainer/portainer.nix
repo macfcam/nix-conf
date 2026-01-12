@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  project.name = "portainer";
+
   services = {
     portainer = {
       service = {

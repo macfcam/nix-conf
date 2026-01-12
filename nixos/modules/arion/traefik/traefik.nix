@@ -1,6 +1,8 @@
 { traefikEnvFile, traefikConfigDir, ... }:
 
 {
+  project.name = "traefik";
+
   services = {
     traefik = {
       service = {
