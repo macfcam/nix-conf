@@ -18,6 +18,9 @@
     # Cockpit config
     ./modules/cockpit.nix
 
+    # GNOME config
+    ./modules/gnome.nix
+
     # Font config
     ./modules/fonts.nix
 

@@ -9,16 +9,6 @@
     # Enable power-profiles-daemon service
     power-profiles-daemon.enable = true;
 
-    # Disable X11
-    xserver.enable = false;
-
-    # Install GNOME
-    desktopManager.gnome.enable = true;
-    displayManager.gdm = {
-      enable = true;
-      autoSuspend = false;
-    };
-
     # Disable CUPS
     printing.enable = false;
 
