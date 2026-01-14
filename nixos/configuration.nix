@@ -33,6 +33,9 @@
     # Program and package config
     ./modules/packages.nix
 
+    # Prometheus related config
+    ./modules/prometheus.nix
+
     # SOPS config
     ./modules/secrets.nix
 
