@@ -8,6 +8,13 @@ let
     cp ${./traefik/config/traefik.toml} $out/traefik.toml
     cp ${./traefik/config/dynamic.toml} $out/dynamic.toml
   '';
+
+  # Create a derivation containing Grafana provisioning config files.
+  # This ensures the store path is properly tracked and won't be garbage collected.
+  grafanaProvisioningDir = pkgs.runCommand "grafana-provisioning" { } ''
+    mkdir -p $out/datasources
+    cp ${./grafana/provisioning/datasources/prometheus.yaml} $out/datasources/prometheus.yaml
+  '';
 in
 
 {
@@ -26,6 +33,12 @@ in
         imports = [ ./traefik/traefik.nix ];
         _module.args.traefikEnvFile = config.sops.templates."traefik-cloudflare.env".path;
         _module.args.traefikConfigDir = traefikConfigDir;
+      };
+
+      grafana.settings = {
+        imports = [ ./grafana/grafana.nix ];
+        _module.args.grafanaPasswordEnvFile = config.sops.templates."grafana-admin-password.env".path;
+        _module.args.grafanaProvisioningDir = grafanaProvisioningDir;
       };
     };
   };

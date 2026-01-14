@@ -15,5 +15,5 @@ resolver = "letsencrypt"
   "bazarr-sc.mapeus.xyz",
   "jellyseerr-sc.mapeus.xyz",
   "sonarr-sc.mapeus.xyz",
-  "vw-sc.mapeus.xyz"
+  "grafana-sc.mapeus.xyz"
 ]

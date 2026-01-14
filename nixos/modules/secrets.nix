@@ -15,12 +15,20 @@
     # Define secrets that should be available system-wide
     secrets = {
       cloudflare_api_token = { };
+      grafana_admin_password = { };
     };
 
     # Create an env file for Traefik with the Cloudflare token
     templates."traefik-cloudflare.env" = {
       content = ''
         ${config.sops.placeholder.cloudflare_api_token}
+      '';
+    };
+
+    # Create an env file for Grafana admin password
+    templates."grafana-admin-password.env" = {
+      content = ''
+        ${config.sops.placeholder.grafana_admin_password}
       '';
     };
   };
