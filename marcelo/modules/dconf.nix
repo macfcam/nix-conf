@@ -19,13 +19,13 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      document-font-name = "IBM Plex Serif 10";
+      document-font-name = "Noto Serif 11";
       font-antialiasing = "rgba";
       font-hinting = "full";
-      font-name = "IBM Plex Sans 10";
+      font-name = "Adwaita Sans 11";
       gtk-theme = "adw-gtk3-dark";
       icon-theme = "Papirus-Dark";
-      monospace-font-name = "IBM Plex Mono 10";
+      monospace-font-name = "Adwaita Mono 11";
     };
 
     "org/gnome/desktop/input-sources" = {
@@ -77,6 +77,124 @@ with lib.hm.gvariant;
       night-light-schedule-from = "18.0";
       night-light-schedule-to = "06.0";
       night-light-temperature = lib.hm.gvariant.mkUint32 4700;
+    };
+
+    "org/gnome/Ptyxis" = {
+      cursor-blink-mode = "off";
+      default-profile-uuid = "703ed983a52fe9b12a1a638b6941a022";
+      font-name = "JetBrainsMono Nerd Font Mono 10";
+      profile-uuids = [ "703ed983a52fe9b12a1a638b6941a022" ];
+      restore-session = false;
+      scrollbar-policy = "never";
+      text-blink-mode = "never";
+      use-system-font = false;
+      window-size = mkTuple [
+        (mkUint32 272)
+        (mkUint32 63)
+      ];
+    };
+
+    "org/gnome/Ptyxis/Profiles/703ed983a52fe9b12a1a638b6941a022" = {
+      backspace-binding = "ascii-delete";
+      cjk-ambiguous-width = "narrow";
+      custom-command = "/etc/profiles/per-user/marcelo/bin/fish";
+      delete-binding = "delete-sequence";
+      label = "Default";
+      limit-scrollback = false;
+      palette = "Catppuccin Mocha";
+      use-custom-command = true;
+    };
+
+    "org/gnome/nautilus/list-view" = {
+      default-column-order = [
+        "name"
+        "size"
+        "type"
+        "owner"
+        "group"
+        "permissions"
+        "date_modified"
+        "date_accessed"
+        "date_created"
+        "recency"
+        "detailed_type"
+      ];
+      default-visible-columns = [
+        "name"
+        "size"
+        "type"
+        "date_modified"
+      ];
+      default-zoom-level = "medium";
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "list-view";
+      migrated-gtk-settings = true;
+      search-filter-time-type = "last_modified";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      settings-version = 2;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
+      brightness = 0.6;
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/coverflow-alt-tab" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+      blur = true;
+      brightness = 0.6;
+      pipeline = "pipeline_default_rounded";
+      sigma = 30;
+      static-blur = true;
+      style-dash-to-dock = 0;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/overview" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      brightness = 0.6;
+      pipeline = "pipeline_default";
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
+      pipeline = "pipeline_default";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+      brightness = 0.6;
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/clipboard-indicator" = {
+      history-size = 100;
+      move-item-first = true;
+    };
+
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      background-opacity = 0.8;
+      custom-theme-shrink = true;
+      dash-max-icon-size = 48;
+      dock-position = "BOTTOM";
+      height-fraction = 0.9;
+      hot-keys = false;
+      intellihide-mode = "MAXIMIZED_WINDOWS";
+      preferred-monitor = -2;
+      preferred-monitor-by-connector = "DP-1";
+      show-apps-at-top = true;
     };
   };
 }

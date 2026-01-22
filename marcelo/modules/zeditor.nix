@@ -40,7 +40,7 @@
         env = {
           TERM = "alacritty";
         };
-        font_family = "JetBrainsMono Nerd Font Mono";
+        font_family = "CommitMono Nerd Font Mono";
         font_size = 13;
         line_height = "standard";
         shell = {
@@ -50,7 +50,7 @@
 
       ui_font_size = 16;
       buffer_font_size = 13;
-      buffer_font_family = "JetBrainsMono Nerd Font Mono";
+      buffer_font_family = "CommitMono Nerd Font Mono";
       soft_wrap = "editor_width";
 
       lsp = {
