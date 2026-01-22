@@ -30,6 +30,9 @@
     # Network config
     ./modules/networking.nix
 
+    # OpenRGB config
+    ./modules/openrgb.nix
+
     # Program and package config
     ./modules/packages.nix
 
