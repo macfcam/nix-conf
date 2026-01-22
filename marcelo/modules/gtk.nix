@@ -12,7 +12,7 @@
 
     font = {
       name = "IBM Plex Sans";
-      size = 11;
+      size = 10;
     };
 
     iconTheme = {

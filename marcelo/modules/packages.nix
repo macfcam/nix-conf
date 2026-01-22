@@ -22,12 +22,14 @@
     neofetch
     nil
     nixd
+    nixfmt
     nvd
     pciutils
     pyenv
     remmina
     resources
     sops
+    spotify
     ssh-to-age
     teams-for-linux
     telegram-desktop

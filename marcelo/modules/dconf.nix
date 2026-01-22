@@ -19,13 +19,13 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      document-font-name = "IBM Plex Serif 11";
+      document-font-name = "IBM Plex Serif 10";
       font-antialiasing = "rgba";
       font-hinting = "full";
-      font-name = "IBM Plex Sans 11";
+      font-name = "IBM Plex Sans 10";
       gtk-theme = "adw-gtk3-dark";
       icon-theme = "Papirus-Dark";
-      monospace-font-name = "IBM Plex Mono 11";
+      monospace-font-name = "IBM Plex Mono 10";
     };
 
     "org/gnome/desktop/input-sources" = {

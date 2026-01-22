@@ -24,7 +24,6 @@ in
   };
 
   imports = [
-    ./modules/alacritty.nix
     ./modules/bash.nix
     ./modules/fish.nix
     ./modules/git.nix
