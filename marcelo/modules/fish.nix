@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   cfg = import ../config.nix;
@@ -58,4 +58,8 @@ in
   };
 
   programs.zoxide.enable = true;
+
+  home.packages = with pkgs; [
+    fishPlugins.tide
+  ];
 }
