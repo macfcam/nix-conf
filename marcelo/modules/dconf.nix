@@ -13,13 +13,28 @@ with lib.hm.gvariant;
         "clipboard-indicator@tudmotu.com"
         "dash-to-dock@micxgx.gmail.com"
         "monitor@astraext.github.io"
+        "simple-weather@romanlefler.com"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
+      ];
+      favorite-apps = [
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.TextEditor.desktop"
+        "virt-manager.desktop"
+        "chromium-browser.desktop"
+        "firefox.desktop"
+        "teams-for-linux.desktop"
+        "code.desktop"
+        "dev.zed.Zed.desktop"
+        "lens-desktop.desktop"
+        "org.gnome.Ptyxis.desktop"
+        "org.telegram.desktop.desktop"
+        "spotify.desktop"
       ];
     };
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      document-font-name = "Noto Serif 11";
+      document-font-name = "Adwaita Sans 11";
       font-antialiasing = "rgba";
       font-hinting = "full";
       font-name = "Adwaita Sans 11";
@@ -195,6 +210,19 @@ with lib.hm.gvariant;
       preferred-monitor = -2;
       preferred-monitor-by-connector = "DP-1";
       show-apps-at-top = true;
+    };
+
+    "org/gnome/shell/extensions/simple-weather" = {
+      always-packaged-icons = false;
+      is-activated = true;
+      locations = [ ''
+        {"name":"Lagoa Santa","lat":-19.6301,"lon":-43.9009}
+      '' ];
+      my-loc-provider = "ipapi.co";
+      panel-box = "center";
+      symbolic-icons-panel = false;
+      theme = "";
+      unit-preset = "metric";
     };
   };
 }
