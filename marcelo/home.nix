@@ -21,6 +21,7 @@ in
     MOZ_ENABLE_WAYLAND = "1";
     NIXOS_OZONE_WL = "1";
     TG_DOWNLOAD_DIR = "$HOME/.terragrunt-cache";
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
   };
 
   imports = [
