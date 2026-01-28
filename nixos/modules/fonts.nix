@@ -15,6 +15,9 @@ in
     noto-fonts-color-emoji
     ubuntu-sans
     ubuntu-sans-mono
+    roboto
+    roboto-mono
+    roboto-serif
 
     # Nerd fonts
     nf.code-new-roman

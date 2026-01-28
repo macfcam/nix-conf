@@ -39,7 +39,7 @@ with lib.hm.gvariant;
       font-hinting = "full";
       font-name = "Adwaita Sans 11";
       gtk-theme = "adw-gtk3-dark";
-      icon-theme = "Papirus-Dark";
+      icon-theme = "Tela-dark";
       monospace-font-name = "Adwaita Mono 11";
     };
 
@@ -215,9 +215,11 @@ with lib.hm.gvariant;
     "org/gnome/shell/extensions/simple-weather" = {
       always-packaged-icons = false;
       is-activated = true;
-      locations = [ ''
-        {"name":"Lagoa Santa","lat":-19.6301,"lon":-43.9009}
-      '' ];
+      locations = [
+        ''
+          {"name":"Lagoa Santa","lat":-19.6301,"lon":-43.9009}
+        ''
+      ];
       my-loc-provider = "ipapi.co";
       panel-box = "center";
       symbolic-icons-panel = false;
