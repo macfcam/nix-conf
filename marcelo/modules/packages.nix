@@ -3,6 +3,19 @@
   ...
 }:
 
+let
+  spotify-x11 = pkgs.symlinkJoin {
+    name = "spotify-x11";
+    paths = [ pkgs.spotify ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/spotify \
+        --unset WAYLAND_DISPLAY \
+        --set NIXOS_OZONE_WL "0"
+    '';
+  };
+in
+
 {
   home.packages = with pkgs; [
     age
@@ -29,7 +42,6 @@
     remmina
     resources
     sops
-    spotify
     ssh-to-age
     teams-for-linux
     telegram-desktop
@@ -39,5 +51,7 @@
     vlc
     wget
     wl-clipboard
+
+    spotify-x11
   ];
 }
