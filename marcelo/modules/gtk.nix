@@ -11,8 +11,8 @@
     };
 
     font = {
-      name = "Adwaita Sans";
-      size = 11;
+      name = "IBM Plex Sans";
+      size = 10;
     };
 
     iconTheme = {

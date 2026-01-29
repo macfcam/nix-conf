@@ -43,7 +43,7 @@
           TERM = "alacritty";
         };
         font_family = "JetBrainsMono Nerd Font Mono";
-        font_size = 14;
+        font_size = 13;
         line_height = "standard";
         shell = {
           program = "fish";
@@ -51,7 +51,7 @@
       };
 
       ui_font_size = 16;
-      buffer_font_size = 14;
+      buffer_font_size = 13;
       buffer_font_family = "JetBrainsMono Nerd Font Mono";
       soft_wrap = "editor_width";
 

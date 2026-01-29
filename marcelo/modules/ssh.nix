@@ -28,7 +28,7 @@ in
       "10.208.*.* 10.206.*.* 172.25.*.* 10.33.*.* 10.34.*.* 10.100.*.*" = {
         proxyCommand = "nc -X 5 -x ${cfg.proxy.hostPort} %h %p";
       };
-      "ssh.dev.azure.com" = {
+      "ssh.dev.azure.com vs-ssh.visualstudio.com" = {
         identityFile = "~/.ssh/id_rsa_marcelo_filho";
         identitiesOnly = true;
         extraOptions = {
