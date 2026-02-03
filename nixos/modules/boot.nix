@@ -5,7 +5,7 @@
     kernelParams = [ "quiet" ];
 
     # Using linux-zen kernel
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     loader = {
       # Use systemd-boot EFI boot loader
