@@ -45,9 +45,6 @@
     # Services config
     ./modules/services.nix
 
-    # Steam config
-    ./modules/steam.nix
-
     # System config
     ./modules/system.nix
 
