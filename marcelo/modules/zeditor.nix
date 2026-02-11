@@ -11,6 +11,7 @@
       "docker-compose"
       "git-firefly"
       "latex"
+      "log"
       "nix"
       "python-snippets"
       "terraform"

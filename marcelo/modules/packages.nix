@@ -39,14 +39,11 @@ in
     nvd
     pciutils
     pyenv
-    remmina
     resources
     sops
     ssh-to-age
-    teams-for-linux
     telegram-desktop
     terraform
-    terragrunt
     virt-manager
     vlc
     wget
