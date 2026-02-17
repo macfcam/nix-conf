@@ -33,11 +33,13 @@
     fsType = "xfs";
   };
 
-  boot.initrd.luks.devices."nixos-rootfs".device =
-    "/dev/disk/by-uuid/6fa9ae8d-6cc2-4a71-b1d3-83e3eb4a62d7";
+  boot.initrd.luks.devices."nixos-rootfs" = {
+    device = "/dev/disk/by-partuuid/321702ad-7709-44eb-9ad8-d029d7287b89";
+    header = "/dev/disk/by-partuuid/d3a16764-9496-4c51-b708-7857493e2412";
+  };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/E5D2-936B";
+    device = "/dev/disk/by-partuuid/d95a329c-a5f3-4e7f-8b95-89b932bef26f";
     fsType = "vfat";
     options = [
       "fmask=0077"
