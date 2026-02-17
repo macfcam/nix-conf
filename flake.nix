@@ -19,11 +19,17 @@
       url = "github:hercules-ci/arion";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs@{
       arion,
+      lanzaboote,
       nixpkgs,
       home-manager,
       sops-nix,
@@ -36,6 +42,7 @@
           modules = [
             ./nixos/configuration.nix
             arion.nixosModules.arion
+            lanzaboote.nixosModules.lanzaboote
             sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
             {
