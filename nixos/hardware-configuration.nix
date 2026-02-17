@@ -29,12 +29,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/e7d187c5-59b6-4b83-a981-41c881ed47e2";
+    device = "/dev/disk/by-uuid/534ebef1-ca48-48a0-bcf5-3e081460d4e8";
     fsType = "xfs";
   };
 
   boot.initrd.luks.devices."nixos-rootfs" = {
-    device = "/dev/disk/by-partuuid/321702ad-7709-44eb-9ad8-d029d7287b89";
+    device = "/dev/disk/by-path/pci-0000:01:00.0-nvme-1";
     header = "/dev/disk/by-partuuid/d3a16764-9496-4c51-b708-7857493e2412";
   };
 
