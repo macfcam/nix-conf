@@ -35,7 +35,7 @@ in
     ./modules/ssh.nix
     ./modules/starship.nix
     ./modules/tmux.nix
-    ./modules/vscode.nix
+    ./modules/vscodium.nix
     ./modules/zeditor.nix
   ];
 
