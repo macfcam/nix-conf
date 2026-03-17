@@ -2,9 +2,7 @@
   description = "Starscream NixOS setup";
 
   inputs = {
-    # fix virt-secret-init-encryption
-    nixpkgs.url = "github:nixos/nixpkgs/1a0fccf8299acc1a36f7154efd13f6d005533d09";
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     home-manager = {
