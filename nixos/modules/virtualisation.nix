@@ -14,6 +14,7 @@
 
     libvirtd = {
       enable = true;
+      dbus.enable = true;
       qemu = {
         package = (
           pkgs.qemu_kvm.override {
@@ -25,6 +26,19 @@
         swtpm.enable = true;
       };
     };
+  };
+
+  services.cockpit = {
+    enable = true;
+    openFirewall = true;
+    port = 9090;
+    allowed-origins = [
+      "https://192.168.100.151:9090"
+      "https://cockpit-sc.mapeus.xyz"
+    ];
+    plugins = [
+      pkgs.cockpit-machines
+    ];
   };
 
   # Allow traffic from Docker networks through the firewall

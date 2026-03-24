@@ -15,9 +15,6 @@
     # Boot config
     ./modules/boot.nix
 
-    # Cockpit config
-    ./modules/cockpit.nix
-
     # GNOME config
     ./modules/gnome.nix
 
