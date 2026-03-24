@@ -28,7 +28,6 @@
     pyenv
     resources
     sops
-    spotify
     ssh-to-age
     telegram-desktop
     terraform
