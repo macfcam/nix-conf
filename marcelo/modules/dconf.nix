@@ -28,6 +28,7 @@ with lib.hm.gvariant;
         "org.gnome.Ptyxis.desktop"
         "org.telegram.desktop.desktop"
         "spotify.desktop"
+        "com.valvesoftware.Steam"
       ];
     };
 
@@ -209,6 +210,7 @@ with lib.hm.gvariant;
       preferred-monitor = -2;
       preferred-monitor-by-connector = "DP-1";
       show-apps-at-top = true;
+      animate-show-apps = true;
     };
 
     "org/gnome/shell/extensions/simple-weather" = {
