@@ -25,10 +25,11 @@ with lib.hm.gvariant;
         "code.desktop"
         "dev.zed.Zed.desktop"
         "lens-desktop.desktop"
+        "bruno.desktop"
         "org.gnome.Ptyxis.desktop"
         "org.telegram.desktop.desktop"
         "spotify.desktop"
-        "com.valvesoftware.Steam"
+        "com.valvesoftware.Steam.desktop"
       ];
     };
 
