@@ -25,6 +25,7 @@
     "i2c-dev"
     "i2c-piix4"
     "kvm-amd"
+    "nct6775"
   ];
   boot.extraModulePackages = [ ];
 
