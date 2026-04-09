@@ -50,6 +50,9 @@
 
     # Virtualization config
     ./modules/virtualisation.nix
+
+    # ROCm config
+    ./modules/rocm.nix
   ];
 
   # Enable flakes
