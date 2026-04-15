@@ -24,6 +24,7 @@
       "kx" = "kubectx";
       "cd" = "z";
       "cleandocker" = "docker system prune -a -f";
+      "gad" = "git add";
       "gb" = "git branch --show-current";
       "gck" = "git checkout";
       "gcm" = "git commit";
