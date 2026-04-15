@@ -13,13 +13,12 @@
       "latex"
       "log"
       "nix"
-      "python-snippets"
       "terraform"
       "toml"
     ];
 
     userSettings = {
-      auto_indent = false;
+      auto_indent = "none";
 
       theme = {
         mode = "system";
@@ -63,6 +62,40 @@
               command = [ "nixfmt" ];
             };
           };
+        };
+
+        basedpyright = {
+          settings = {
+            "basedpyright.analysis" = {
+              diagnosticMode = "workspace"; # analyze all files, not just open ones
+              typeCheckingMode = "standard"; # matches pyright default
+              inlayHints = {
+                callArgumentNames = false;
+              };
+            };
+          };
+        };
+      };
+
+      languages = {
+        Python = {
+          language_servers = [
+            "basedpyright"
+            "ruff"
+            "!pyright"
+            "!pylsp"
+            "!ty"
+            "!pyrefly"
+          ];
+          code_actions_on_format = {
+            "source.organizeImports.ruff" = true;
+          };
+          formatter = {
+            language_server = {
+              name = "ruff";
+            };
+          };
+          format_on_save = "on";
         };
       };
     };
