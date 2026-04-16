@@ -20,10 +20,14 @@
       pkiBundle = "/var/lib/sbctl";
     };
 
-    # Load kernel modules on boot.
-    initrd.kernelModules = [
-      "amdgpu"
-    ];
+    initrd = {
+      # Disable systemd stage 1 — preOpenCommands/postOpenCommands on the LUKS
+      # device are incompatible with it (nixpkgs now defaults this to true).
+      systemd.enable = false;
+
+      # Load kernel modules on boot.
+      kernelModules = [ "amdgpu" ];
+    };
 
     # Blacklist kernel modules at boot
     blacklistedKernelModules = [
