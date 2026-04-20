@@ -29,6 +29,8 @@
       "gck" = "git checkout";
       "gcm" = "git commit";
       "gps" = "git push";
+      "nfu" = "nix flake update";
+      "nrdr" = "nixos-rebuild dry-run --flake .";
       "reload_kitty" = "kill -SIGUSR1 $KITTY_PID";
     };
 
