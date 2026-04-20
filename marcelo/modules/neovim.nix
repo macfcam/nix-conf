@@ -11,5 +11,7 @@
       ripgrep
       gcc
     ];
+
+    sideloadInitLua = true;
   };
 }
