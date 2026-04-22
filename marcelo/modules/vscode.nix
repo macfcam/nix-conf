@@ -7,7 +7,6 @@
       extensions =
         with pkgs.vscode-extensions;
         [
-          anthropic.claude-code
           catppuccin.catppuccin-vsc
           catppuccin.catppuccin-vsc-icons
           eamodio.gitlens
