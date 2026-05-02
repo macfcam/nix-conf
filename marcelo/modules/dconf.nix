@@ -64,6 +64,10 @@ with lib.hm.gvariant;
       speed = -0.5;
     };
 
+    "org/gnome/desktop/session" = {
+      idle-delay = lib.hm.gvariant.mkUint32 900;
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       move-to-workspace-up = [ "<Super><Shift>Page_Up" ];
       move-to-workspace-down = [ "<Super><Shift>Page_Down" ];
