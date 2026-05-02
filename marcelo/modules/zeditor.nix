@@ -8,7 +8,6 @@
       "catppuccin"
       "catppuccin-icons"
       "dockerfile"
-      "docker-compose"
       "git-firefly"
       "latex"
       "log"
