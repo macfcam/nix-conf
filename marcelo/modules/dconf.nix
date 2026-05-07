@@ -22,7 +22,7 @@ with lib.hm.gvariant;
         "virt-manager.desktop"
         "chromium-browser.desktop"
         "firefox.desktop"
-        "code.desktop"
+        "codium.desktop"
         "dev.zed.Zed.desktop"
         "lens-desktop.desktop"
         "bruno.desktop"
